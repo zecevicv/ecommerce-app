@@ -1,0 +1,201 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+// Hero
+.hero {
+  overflow: hidden;
+  position: relative;
+  padding-top: 47%;
+  margin-bottom: 70px;
+  
+  .hero__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  @media only screen and (max-width: 1600px) {
+    padding-top: 54%;
+  }
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    margin-bottom: 50px;
+    padding-top: 70%;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    padding-top: 80%;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    padding-top: 120%;
+  }
+}
+
+.hero__content {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  left: 0;
+  transform: translateY(-50%);
+
+
+  a {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 40px;
+      margin-right: 22px;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 13px;
+      color: $white;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    top: 52%;
+  }
+}
+
+.hero__features {
+  width: 75%;
+  padding: 35px 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-top-right-radius: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    display: none;
+  }
+}
+
+.hero-feature {
+  display: flex;
+  margin-right: 50px;
+
+  h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  p {
+    max-width: 220px;
+    font-size: 13px;
+    color: $gray;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+  }
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    margin-right: 0;
+  }
+}
+
+// Why Choose Us
+.why-choose-us {
+  margin: 70px 0 140px 0;
+
+  h2 {
+    margin-bottom: 90px;
+  }
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    h2 {
+      margin-bottom: 80px;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    h2 {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5%;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      column-gap: 3%;
+    }
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 70px;
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      row-gap: 50px;
+    }
+  }
+
+  &__feature {
+
+    img {
+      height: 70px;
+      width: auto;
+      margin-bottom: 40px;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        margin: 0 auto 40px auto;
+      }
+
+      @media only screen and (max-width: $breakpoint-md) {
+        margin: 0 auto 25px auto;
+      }
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 20px;
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+
+    p {
+      font-size: 13px;
+      color: $dark-gray;
+      max-width: 280px;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        margin: 0 auto;
+        max-width: 250px;
+      }
+    }
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    margin: 50px 0 110px 0;
+  }
+}

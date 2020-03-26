@@ -1,0 +1,82 @@
+.quantity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 130px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  border: 1px solid $light-gray;
+  border-radius: 100px;
+  overflow: hidden;
+  background-color: $white;
+  color: $black;
+  margin-right: 15px;
+
+  &__input {
+    text-align: center;
+    border: none;
+    width: 20px;
+    font-size: 16px;
+    font-weight: 600;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    & {
+      -moz-appearance: textfield;
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: 12px;
+      width: 12px;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      font-size: 10px;
+      width: 12px;
+    }
+  }
+
+  &__minus,
+  &__plus {
+    flex-grow: 1;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    color: $black;
+    line-height: 1;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: 12px;
+    }
+  }
+
+  &__minus.disabled,
+  &__plus.disabled {
+    opacity: .3;
+  }
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    width: 100px;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    width: 70px;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+     width: 50px;
+  }
+}

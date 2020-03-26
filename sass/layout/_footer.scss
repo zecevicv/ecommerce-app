@@ -1,0 +1,166 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+  padding-top: 70px;
+
+  @media only screen and (max-width: $breakpoint-md) {
+    padding-top: 50px;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    padding-top: 40px;
+  }
+
+  &__main {
+    display: flex;
+    padding-bottom: 50px;
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      flex-direction: column;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      padding-bottom: 35px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    img {
+      max-width: 45px;
+      margin-right: 25px;
+    }
+
+    p {
+      color: $black;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__left,
+  &__right {
+    flex: 0 0 50%;
+  }
+
+  &__left {
+    @media only screen and (max-width: $breakpoint-xl) {
+      flex: 0 0 45%;
+    }
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      flex: 0 0 55%;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__desc {
+    max-width: 400px;
+    font-size: 13px;
+    color: $dark-gray;
+    margin-bottom: 30px;
+    line-height: 2;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      max-width: 345px;
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: 12px;
+      max-width: 310px;
+    }
+  }
+
+  &__social {
+    display: flex;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    font-size: 13px;
+    font-weight: 400;
+    border-bottom: 2px solid transparent;
+    transition: $transition-fast;
+
+    &:hover {
+      border-bottom: 2px solid $orange;
+      transform: translateY(-2px);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        margin-bottom: 5px;
+      }
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+      font-size: 12px;
+    }
+  }
+}
+
+.copyright {
+  border-top: 1px solid $offwhite;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  // text-transform: uppercase;
+  letter-spacing: 0.1px;
+  line-height: 2;
+  color: $gray;
+
+  a {
+    transition: $transition-fast;
+    border-bottom: 2px solid $orange;
+    font-weight: 400;
+  }
+
+  a:hover {
+    color: $black;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    padding: 17px 0;
+  }
+}

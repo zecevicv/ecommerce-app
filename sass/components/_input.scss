@@ -1,0 +1,22 @@
+.input {
+  font-size: 13px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  line-height: 1.5;
+  padding: 15px 25px;
+  border-radius: 50px;
+  color: $black;
+  background-color: $white;
+  transition: $transition-slow;
+  // min-width: 300px;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: $gray;
+  }
+}

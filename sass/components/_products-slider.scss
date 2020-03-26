@@ -1,0 +1,24 @@
+// Product Slider
+.products-slider {
+  padding: 70px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5%;
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    column-gap: 3%;
+    padding: 60px 0;
+  }
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 0 60px 0;
+    row-gap: 50px;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+    row-gap: 30px;
+  }
+}

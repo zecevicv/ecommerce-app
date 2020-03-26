@@ -1,0 +1,28 @@
+.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid $light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: $transition-slow;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .05);
+  opacity: .5;
+
+  &:not(:last-of-type) {
+    margin-right: 15px;
+  }
+
+  img {
+    height: 12px;
+    width: 12px;
+    transition: $transition-fast;
+  }
+
+  &:hover {
+    opacity: .8;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+  }
+}

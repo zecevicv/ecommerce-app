@@ -1,0 +1,155 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+  transition: $transition-slowest;
+  
+  &__img {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 20px;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      padding: 15px;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      padding: 12px 10px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 300;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      font-size: 14px;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      font-size: 12px;
+    }
+  }
+
+  &__price {
+    font-size: 20px;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      font-size: 16px;
+    }
+
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      font-size: 14px;
+    }
+
+    &--sale {
+      .new-price {
+        display: inline-block;
+        color: $red;
+        margin-right: 30px;
+
+        @media only screen and (max-width: $breakpoint-xl) {
+          margin-right: 20px;
+        }
+
+        @media only screen and (max-width: $breakpoint-sm) {
+          margin-right: 10px;
+        }
+      }
+
+      .old-price {
+        display: inline-block;
+        color: $light-gray;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &__sale {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      top: 12px;
+      left: 12px;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      top: 5px;
+      left: 10px;
+    }
+
+    @media only screen and (max-width: 350px) {
+      top: 2px;
+      left: 7px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 0);
+    transition: $transition-slowest;
+
+    a:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    img {
+      width: 38px;
+      transform: translateY(0);
+      backface-visibility: hidden;
+      transition: $transition-slowest;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        width: 33px;
+      }
+    }
+  }
+
+  &__overlay {
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparentize($black, .75);
+    transition: $transition-slowest;
+  }
+
+  &:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+
+    .product__overlay {
+      opacity: 1;
+    }
+
+    .product__icons {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: $breakpoint-sm) {.container {max-width: $container-sm;}}
+@media (min-width: $breakpoint-md) {.container {max-width: $container-md;}}
+@media (min-width: $breakpoint-lg) {.container {max-width: $container-lg;}}
+@media (min-width: $breakpoint-xl) {.container {max-width: $container-xl;}}
+
+// Text Properties
+.center {
+  text-align: center;
+  justify-content: center;
+}
+
+// Colors
+.text-white {color: $white;}
+
+// Utilities
+.d-none {display: none;}
+.d-flex {display: flex;}
+.no-scroll {overflow: hidden;}
+
+@media only screen and (min-width: $breakpoint-md) {
+  .d-md-flex {
+    display: flex;
+  }
+
+  .d-md-none {
+    display: none;
+  }
+}
+
+// Margins & Paddings
+.m-0 {
+  margin: 0;
+}

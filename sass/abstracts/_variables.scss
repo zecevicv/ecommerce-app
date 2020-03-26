@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Container Sizes
+$container-xl: 1280px;
+$container-lg: 960px;
+$container-md: 720px;
+$container-sm: 540px;
+
+/// Breakpoints
+$breakpoint-xl: 1320px;
+$breakpoint-lg: 991px;
+$breakpoint-md: 767px;
+$breakpoint-sm: 575px;
+
+// Colors
+$white: #fff;
+$offwhite: #ebebeb;
+$gray: #a8a8a8;
+$light-gray: #D8D8D8;
+$dark-gray: #808080;
+$black: #000;
+$red: #ff0000;
+$orange: #fbb03b;
+
+// Transition
+$transition-fast: all .1s ease;
+$transition-slow: all .25s ease;
+$transition-slowest: all .4s ease;

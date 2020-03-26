@@ -1,0 +1,169 @@
+{
+  "products": [
+    {
+      "name": "'Create Don't Hate' Slim Fit T-Shirt",
+      "id": 274901,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-1_01.jpg",
+        "../img/products/product-1_02.jpg",
+        "../img/products/product-1_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Laika Space Traveler' Slim Fit T-Shirt",
+      "id": 921084,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-2_01.jpg",
+        "../img/products/product-2_02.jpg",
+        "../img/products/product-2_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'The Great Ramen' Slim Fit T-Shirt",
+      "id": 131191,
+      "price": 24.99,
+      "salePrice": 17.99,
+      "images": [
+        "../img/products/product-3_01.jpg",
+        "../img/products/product-3_02.jpg",
+        "../img/products/product-3_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'The Bodacious Period' Slim Fit T-Shirt",
+      "id": 436781,
+      "price": 24.99,
+      "salePrice": 17.99,
+      "images": [
+        "../img/products/product-4_01.jpg",
+        "../img/products/product-4_02.jpg",
+        "../img/products/product-4_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Sea Emperor' Slim Fit T-Shirt",
+      "id": 119863,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-5_01.jpg",
+        "../img/products/product-5_02.jpg",
+        "../img/products/product-5_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'MTN LP' Slim Fit T-Shirt",
+      "id": 303487,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-6_01.jpg",
+        "../img/products/product-6_02.jpg",
+        "../img/products/product-6_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'I'm Dogtor' Slim Fit T-Shirt",
+      "id": 930265,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-7_01.jpg",
+        "../img/products/product-7_02.jpg",
+        "../img/products/product-7_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Fuji Classic' Slim Fit T-Shirt",
+      "id": 487632,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-8_01.jpg",
+        "../img/products/product-8_02.jpg",
+        "../img/products/product-8_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Gulf Racing Retro' Slim Fit T-Shirt",
+      "id": 156557,
+      "price": 24.99,
+      "salePrice": 17.99,
+      "images": [
+        "../img/products/product-9_01.jpg",
+        "../img/products/product-9_02.jpg",
+        "../img/products/product-9_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Panda Boxer' Slim Fit T-Shirt",
+      "id": 233244,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-10_01.jpg",
+        "../img/products/product-10_02.jpg",
+        "../img/products/product-10_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'CHAOS' Slim Fit T-Shirt",
+      "id": 573377,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-11_01.jpg",
+        "../img/products/product-11_02.jpg",
+        "../img/products/product-11_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Magna' Slim Fit T-Shirt",
+      "id": 173358,
+      "price": 24.99,
+      "salePrice": 17.99,
+      "images": [
+        "../img/products/product-12_01.jpg",
+        "../img/products/product-12_02.jpg",
+        "../img/products/product-12_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Music Man' Slim Fit T-Shirt",
+      "id": 248113,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-13_01.jpg",
+        "../img/products/product-13_02.jpg",
+        "../img/products/product-13_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'BOWL' Slim Fit T-Shirt",
+      "id": 331272,
+      "price": 24.99,
+      "salePrice": 17.99,
+      "images": [
+        "../img/products/product-14_01.jpg",
+        "../img/products/product-14_02.jpg",
+        "../img/products/product-14_03.jpg"
+      ]
+    }, 
+    {
+      "name": "'Squish That Cat' Slim Fit T-Shirt",
+      "id": 114477,
+      "price": 24.99,
+      "salePrice": 0,
+      "images": [
+        "../img/products/product-15_01.jpg",
+        "../img/products/product-15_02.jpg",
+        "../img/products/product-15_03.jpg"
+      ]
+    }
+  ]
+}

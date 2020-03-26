@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+.heading-xl {
+  font-size: 66px;
+  color: $white;
+  font-weight: bold;
+  max-width: 650px;
+  margin-bottom: 70px;
+  line-height: 1.35;
+
+  @media only screen and (max-width: 1600px) {
+    font-size: 55px;
+    margin-bottom: 40px;
+    max-width: 550px;
+  }
+  
+  @media only screen and (max-width: $breakpoint-xl) {
+    font-size: 43px;
+    max-width: 420px;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    font-size: 32px;
+    max-width: 320px;
+    margin-bottom: 30px;
+  }
+  
+  @media only screen and (max-width: 350px) {
+    font-size: 28px;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+}
+
+.heading-lg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 29px;
+  font-weight: 300;
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    font-size: 23px;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    font-size: 21px;
+  }
+}
