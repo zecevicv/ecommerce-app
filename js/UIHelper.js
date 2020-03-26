@@ -141,7 +141,6 @@ export class UIHelper {
 
   static renderTotalPrice(price) {
     const priceEl = document.querySelector('.price');
-    console.log(priceEl, price);
     if (priceEl) {
       priceEl.innerHTML = `$${price.toFixed(2)}`;
     }
