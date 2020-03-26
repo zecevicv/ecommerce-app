@@ -149,9 +149,11 @@ export class UIHelper {
 
   static updateShoppingCartNumber() {
     const numberUI = document.querySelector('.shopping-cart__number');
-    if (numberUI) {
+    if (numberUI && localStorage.getItem('shoppingCart')) {
       let number = JSON.parse(localStorage.getItem('shoppingCart')).length;
       numberUI.innerHTML = number;
+    } else {
+      numberUI.innerHTML = 0;
     }
   }
 }
