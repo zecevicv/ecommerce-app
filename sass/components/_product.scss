@@ -54,7 +54,7 @@
     &--sale {
       .new-price {
         display: inline-block;
-        color: $red;
+        color: $blue;
         margin-right: 30px;
 
         @media only screen and (max-width: $breakpoint-xl) {

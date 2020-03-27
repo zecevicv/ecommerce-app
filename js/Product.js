@@ -64,7 +64,9 @@ export class Product {
         <!-- Product Info -->
         <div class="single-product__info">
           <div class="single-product__info-left">
-            ${product.salePrice === 0 ? '' : `<div class="single-product__sale"><div class="sale-icon">Sale</div></div>`}
+            ${product.salePrice === 0 ? '' : `<div class="single-product__sale"><div class="label-icon label-icon--sale">Sale</div></div>`}
+            ${product.label === "hot" ? `<div class="single-product__sale"><div class="label-icon label-icon--hot">Hot</div></div>` : ''}
+            ${product.label === "new" ? `<div class="single-product__sale"><div class="label-icon label-icon--new">New</div></div>` : ''}
             <!-- Title & Price -->
             <div class="single-product__main-info">
               <h3 class="single-product__title">${product.name}</h3>
