@@ -9,7 +9,8 @@
         "../img/products/product-1_01.jpg",
         "../img/products/product-1_02.jpg",
         "../img/products/product-1_03.jpg"
-      ]
+      ],
+      "label": "hot"
     }, 
     {
       "name": "'Laika Space Traveler' Slim Fit T-Shirt",
@@ -20,7 +21,8 @@
         "../img/products/product-2_01.jpg",
         "../img/products/product-2_02.jpg",
         "../img/products/product-2_03.jpg"
-      ]
+      ],
+      "label": "hot"
     }, 
     {
       "name": "'The Great Ramen' Slim Fit T-Shirt",
@@ -53,7 +55,8 @@
         "../img/products/product-5_01.jpg",
         "../img/products/product-5_02.jpg",
         "../img/products/product-5_03.jpg"
-      ]
+      ],
+      "label": "hot"
     }, 
     {
       "name": "'MTN LP' Slim Fit T-Shirt",
@@ -64,7 +67,8 @@
         "../img/products/product-6_01.jpg",
         "../img/products/product-6_02.jpg",
         "../img/products/product-6_03.jpg"
-      ]
+      ],
+      "label": "hot"
     }, 
     {
       "name": "'I'm Dogtor' Slim Fit T-Shirt",
@@ -75,7 +79,8 @@
         "../img/products/product-7_01.jpg",
         "../img/products/product-7_02.jpg",
         "../img/products/product-7_03.jpg"
-      ]
+      ],
+      "label": "new"
     }, 
     {
       "name": "'Fuji Classic' Slim Fit T-Shirt",
@@ -86,7 +91,8 @@
         "../img/products/product-8_01.jpg",
         "../img/products/product-8_02.jpg",
         "../img/products/product-8_03.jpg"
-      ]
+      ],
+      "label": "new"
     }, 
     {
       "name": "'Gulf Racing Retro' Slim Fit T-Shirt",
@@ -108,7 +114,8 @@
         "../img/products/product-10_01.jpg",
         "../img/products/product-10_02.jpg",
         "../img/products/product-10_03.jpg"
-      ]
+      ],
+      "label": "new"
     }, 
     {
       "name": "'CHAOS' Slim Fit T-Shirt",
@@ -119,7 +126,8 @@
         "../img/products/product-11_01.jpg",
         "../img/products/product-11_02.jpg",
         "../img/products/product-11_03.jpg"
-      ]
+      ],
+      "label": "new"
     }, 
     {
       "name": "'Magna' Slim Fit T-Shirt",

@@ -100,20 +100,51 @@ export class UI {
   }
 
   static outputProductSliders(products) {
-    const productSliders = document.querySelectorAll('.products-slider');
+    const productSlider1 = document.querySelector('#productSlider1');
+    const productSlider2 = document.querySelector('#productSlider2');
+    const productSlider3 = document.querySelector('#productSlider3');
 
-    // If page has .product-sliders class
-    // Grab 4 random products from products array
-    // And print them to the screen
-    if (productSliders) {
-      productSliders.forEach((slider) => {
-        for (let i = 0; i < 4; i++) {
-          const rnd = Math.floor(Math.random() * 15);
-
-          const productTemplate = Product.createProductTemplate(products[rnd]);
-          slider.appendChild(productTemplate);
+    // Products on sale slider
+    if (productSlider1) {
+      let numOfProducts = 0;
+      for (let i = 0; i < products.length; i++) {
+        if (products[i].salePrice > 0 && numOfProducts <= 3) {
+          numOfProducts++;
+          const productTemplate = Product.createProductTemplate(products[i]);
+          productSlider1.appendChild(productTemplate);
         }
-      });
+      }
+    }
+
+    // Hot & Trending products slider
+    if (productSlider2) {
+      let numOfProducts = 0;
+      for (let i = 0; i < products.length; i++) {
+        if (products[i].label === "hot" && numOfProducts <= 3) {
+          numOfProducts++;
+          const productTemplate = Product.createProductTemplate(products[i]);
+          productSlider2.appendChild(productTemplate);
+        }
+      }
+    }
+
+    // Related Products slider
+    if (productSlider3) {
+      let rndNums = [];
+
+      let runs = 0;
+      for (let i = 0; i < 100; i++) {
+        const rnd = Math.floor(Math.random() * 15);
+        if (!rndNums.includes(rnd) && runs <= 3) {
+          runs++;
+          rndNums.push(rnd);
+        }
+      }
+
+      for (let i = 0; i < rndNums.length; i++) {
+        const productTemplate = Product.createProductTemplate(products[rndNums[i]]);
+        productSlider3.appendChild(productTemplate);
+      }
     }
   }
 

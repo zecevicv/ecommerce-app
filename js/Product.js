@@ -9,6 +9,7 @@ export class Product {
     this.price = product.price;
     this.salePrice = product.salePrice;
     this.images = product.images;
+    this.label = product.label;
   }
 
   static createProductTemplate(product) {
@@ -30,7 +31,9 @@ export class Product {
           ${product.salePrice === 0 ? `$${product.price}` : `<span class="new-price">$${product.salePrice}</span><span class="old-price">$${product.price}</span>`}
         </p>
       </div>
-      ${product.salePrice === 0 ? '' : `<div class="product__sale"><div class="sale-icon">Sale</div></div>`}
+      ${product.salePrice === 0 ? '' : `<div class="product__label"><div class="label-icon label-icon--sale">Sale</div></div>`}
+      ${product.label === "hot" ? `<div class="product__label"><div class="label-icon label-icon--hot">Hot</div></div>` : ''}
+      ${product.label === "new" ? `<div class="product__label"><div class="label-icon label-icon--new">New</div></div>` : ''}
       `;
     const addToCartBtn = productTemplate.querySelector('.product__add-to-cart');
     addToCartBtn.addEventListener('click', (e) => {
