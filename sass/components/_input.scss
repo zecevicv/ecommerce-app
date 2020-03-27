@@ -19,4 +19,13 @@
   &::placeholder {
     color: $gray;
   }
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    padding: 12px 17px;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    padding: 8px 15px;
+    font-size: 10px;
+  }
 }

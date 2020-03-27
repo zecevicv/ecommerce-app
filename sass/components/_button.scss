@@ -43,6 +43,11 @@
     height: 17px;
   }
 
+  @media only screen and (max-width: $breakpoint-xl) {
+    font-size: 12px;
+    padding: 12px 17px;
+  }
+
   @media only screen and (max-width: $breakpoint-md) {
     font-size: 10px;
     padding: 8px 15px;
