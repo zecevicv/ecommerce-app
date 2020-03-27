@@ -120,6 +120,7 @@
     &-price {
       font-size: 16px;
       font-weight: 600;
+      min-width: 126px;
 
       @media only screen and (max-width: $breakpoint-md) {
         font-size: 12px;

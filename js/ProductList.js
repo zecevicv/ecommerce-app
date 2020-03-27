@@ -1,14 +1,15 @@
 import { Product } from './Product.js';
-import { UIHelper } from './UIHelper.js';
+import { UI } from './UI.js';
 
 export class ProductList {
   constructor() { 
+    this.productList = [];
     // Check if products are in localStorage
     // If not fetch them
     if(!localStorage.getItem('products')) {
       this.fetchProducts();
     } else {
-      UIHelper.outputProducts();
+      UI.outputProducts();
     }
   }
 
@@ -30,18 +31,26 @@ export class ProductList {
       throw new Error('Something went wrong!');
     }).then((responseData) => {
       const products = responseData.products;
-      const productList = [];
-
-      // Create new product object and push it to the productList array
-      products.forEach((product) => {
-        productList.push(new Product(product));
-      });
-
-      // Store products in localStorage
-      localStorage.setItem('products', JSON.stringify(productList));
-
-      // Render Products to the UI
-      UIHelper.outputProducts();
+      this.productList = this.createProductList(products);
+      this.storeProducts();
+      UI.outputProducts();
     });
+  }
+
+  // Create a list of products
+  createProductList(products) {
+    const prodList = [];
+
+    // Create new product object and populate the object
+    products.forEach((product) => {
+      prodList.push(new Product(product));
+    });
+
+    return prodList;
+  }
+
+  // Store products in localStorage
+  storeProducts() {
+    localStorage.setItem('products', JSON.stringify(this.productList));
   }
 }

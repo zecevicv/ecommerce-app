@@ -6,7 +6,6 @@ export class Product {
   constructor(product) {
     this.name = product.name;
     this.id = product.id;
-    this.brand = product.brand;
     this.price = product.price;
     this.salePrice = product.salePrice;
     this.images = product.images;
@@ -36,7 +35,7 @@ export class Product {
     const addToCartBtn = productTemplate.querySelector('.product__add-to-cart');
     addToCartBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      ShoppingCart.addToShoppingCart(product.id);
+      ShoppingCart.addToShoppingCart(product.id, 1, (product.salePrice === 0 ? product.price : product.salePrice));
     });
     return productTemplate;
   }
@@ -84,10 +83,10 @@ export class Product {
               <div class="d-flex">
                 <div class="quantity">
                   <div class="quantity__minus disabled">-</div>
-                  <input class="quantity__input" type="number" name="quantity" min="1" max="10" value="1">
+                  <input class="quantity__input" type="number" name="quantity" min="1" max="10" value="1" disabled>
                   <div class="quantity__plus">+</div>
                 </div>
-                <button class="btn btn--orange">Add To Cart</button>
+                <button class="btn btn--orange" id="addToCart">Add To Cart</button>
               </div>
             </div>
           </div>
@@ -102,6 +101,9 @@ export class Product {
 
     const productImagesSide = singleProductTemplate.querySelector('.product-image__side');
     const productImageMain = singleProductTemplate.querySelector('.product-image__main');
+    const addToCartBtn = singleProductTemplate.querySelector('#addToCart');
+
+    // Update the main image with hovered side image
     productImagesSide.addEventListener('mouseover', (e) => {
       const image = e.target.cloneNode(true);
       if (e.target instanceof HTMLImageElement) {
@@ -110,58 +112,13 @@ export class Product {
       }
     });
 
-    return singleProductTemplate;
-  }
-
-  static quantityHandler() {
-    this.quantity = document.querySelectorAll('.quantity');
-
-    // Click Handlers
-    this.quantity.forEach((qty) => {
-      qty.addEventListener('click', (e) => {
-        const plus = e.currentTarget.querySelector('.quantity__plus');
-        const minus = e.currentTarget.querySelector('.quantity__minus');
-        const input = e.currentTarget.querySelector('.quantity__input');
-        const min = input.getAttribute('min');
-        const max = input.getAttribute('max');
-
-        if (e.target === plus && parseInt(input.value) < max) {
-          input.value = parseInt(input.value) + 1;
-        } else if (e.target === minus && parseInt(input.value) > min) {
-          input.value = parseInt(input.value) - 1;
-        }
-
-        if (parseInt(input.value) == max) {
-          plus.classList.add('disabled');
-        } else {
-          plus.classList.remove('disabled');
-        }
-
-        if (parseInt(input.value) == min) {
-          minus.classList.add('disabled');
-        } else {
-          minus.classList.remove('disabled');
-        }
-      });
-
+    // Listen for a click on a add to cart btn and add product to the cart
+    addToCartBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const quantityValue = parseInt(singleProductTemplate.querySelector('.quantity__input').value);
+      ShoppingCart.addToShoppingCart(product.id, quantityValue, (product.salePrice === 0 ? product.price : product.salePrice));
     });
 
-
-    // Quantity input change
-    // Validate entered values
-    document.querySelectorAll('.quantity__input').forEach((input) => {
-      input.addEventListener('change', (e) => {
-        const input = e.currentTarget;
-        const min = input.getAttribute('min');
-        const max = input.getAttribute('max');
-
-        if (input.value > max) {
-          input.value = max;
-        } else if (input.value < min) {
-          input.value = min;
-        }
-      });
-    })
-
+    return singleProductTemplate;
   }
 }

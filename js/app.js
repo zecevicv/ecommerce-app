@@ -1,5 +1,5 @@
-import { UIHelper } from './UIHelper.js';
+import { UI } from './UI.js';
 import { ProductList } from './ProductList.js';
 
-new UIHelper();
+new UI();
 new ProductList();
