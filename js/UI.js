@@ -192,13 +192,15 @@ export class UI {
         shoppingCartOutput.appendChild(cartProductTemplate);
       }
 
-      shoppingCartProducts.forEach((cartProduct) => {
-        products.forEach((product) => {
-          if(product.id === cartProduct.productId) {
-            outputCartProduct(product, cartProduct.quantity);
-          }
-        })
-      });
+      if (shoppingCartProducts) {
+        shoppingCartProducts.forEach((cartProduct) => {
+          products.forEach((product) => {
+            if(product.id === cartProduct.productId) {
+              outputCartProduct(product, cartProduct.quantity);
+            }
+          })
+        });
+      }
 
       // Connect quantityHandler
       UI.quantityHandler();
