@@ -211,22 +211,24 @@ export class UI {
   paginationHandler() {
     const pagination = document.querySelector('.pagination');
     
-    pagination.addEventListener('click', (e) => {
-      const buttons = pagination.querySelectorAll('button');
-      let currentPage = parseInt(e.target.innerHTML) - 1;
-
-      if (e.target.closest('.page')) {
-        currentPage = parseInt(e.target.innerHTML) - 1;
-        this.scrollToTop();
-        buttons.forEach((button) => {
-          button.classList.remove('active');
-        });
-        e.target.classList.add('active');
-        setTimeout(() => {
-          UI.outputProductList(currentPage);
-        }, 800);
-      }
-    });
+    if (pagination) {
+      pagination.addEventListener('click', (e) => {
+        const buttons = pagination.querySelectorAll('button');
+        let currentPage = parseInt(e.target.innerHTML) - 1;
+  
+        if (e.target.closest('.page')) {
+          currentPage = parseInt(e.target.innerHTML) - 1;
+          this.scrollToTop();
+          buttons.forEach((button) => {
+            button.classList.remove('active');
+          });
+          e.target.classList.add('active');
+          setTimeout(() => {
+            UI.outputProductList(currentPage);
+          }, 800);
+        }
+      });
+    }
   }
 
   scrollToTop() {
