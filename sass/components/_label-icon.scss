@@ -18,7 +18,8 @@
   }
 
   &--sale {
-    background-color: $blue;
+    background-color: $orange;
+    color: $black;
   }
 
   &--hot {
@@ -26,8 +27,7 @@
   }
 
   &--new {
-    background-color: $orange;
-    color: $black;
+    background-color: $blue;
   }
 
 }
