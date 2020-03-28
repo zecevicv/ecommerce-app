@@ -1,0 +1,48 @@
+.banner {
+  margin-bottom: 90px;
+  padding: 90px 0 110px 0;
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__heading {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 25px;
+    color: $white;
+    font-weight: 400;
+    transform: translateY(-50%);
+  }
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    padding: 70px 0 90px 0;
+  }
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    margin-bottom: 60px;
+
+    &__img {
+      top: 40%;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    padding: 55px 0 65px 0;
+
+    &__heading {
+      left: 8%;
+      font-size: 22px;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    display: none;
+  }
+}
