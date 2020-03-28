@@ -32,8 +32,12 @@
     margin-bottom: 30px;
 
     img {
-      max-width: 45px;
-      margin-right: 25px;
+      max-width: 41px;
+      margin-right: 15px;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        margin-right: 10px;
+      }
     }
 
     p {
