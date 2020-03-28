@@ -3,7 +3,10 @@ import { ShoppingCart } from "./ShoppingCart.js";
 
 export class UI {
   constructor() {
+    this.currentPage = 0;
+
     this.animateHeader();
+    this.paginationHandler();
   }
 
   animateHeader() {
@@ -81,21 +84,26 @@ export class UI {
 
   static outputProducts() {
     const products = JSON.parse(localStorage.getItem('products'));
-    UI.outputProductList(products);
+    UI.outputProductList(0);
     UI.outputProductSliders(products);
     UI.outputSingleProduct(products);
     UI.outputCartProducts(products);
   }
-
-  static outputProductList(products) {
+  
+  static outputProductList(currentPage) {
     const productList = document.querySelector('.products__list');
-
-    // If page has .product__list class
+    
     if (productList) {
-      products.forEach((product) => {
-        const productTemplate = Product.createProductTemplate(product);
-        productList.appendChild(productTemplate);
-      });
+      productList.innerHTML = '';
+      const products = JSON.parse(localStorage.getItem('products'));
+      const productsPerPage = 9;
+
+      for (let i = currentPage * productsPerPage; i < productsPerPage * (currentPage + 1); i++) {
+        if (products[i]) {
+          const productTemplate = Product.createProductTemplate(products[i]);
+          productList.appendChild(productTemplate);
+        }
+      }
     }
   }
 
@@ -198,5 +206,33 @@ export class UI {
 
     // Update shopping cart number indicator
     this.updateShoppingCartNumber();
+  }
+
+  paginationHandler() {
+    const pagination = document.querySelector('.pagination');
+    
+    pagination.addEventListener('click', (e) => {
+      const buttons = pagination.querySelectorAll('button');
+      let currentPage = parseInt(e.target.innerHTML) - 1;
+
+      if (e.target.closest('.page')) {
+        currentPage = parseInt(e.target.innerHTML) - 1;
+        this.scrollToTop();
+        buttons.forEach((button) => {
+          button.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        setTimeout(() => {
+          UI.outputProductList(currentPage);
+        }, 800);
+      }
+    });
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
   }
 }

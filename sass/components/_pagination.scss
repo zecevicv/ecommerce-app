@@ -28,7 +28,14 @@
   button.active {
     opacity: 1;
     border: 1px solid $orange;
-  } 
+  }
+
+  button.disabled:hover {
+    opacity: .75;
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+  }
   
   button:hover {
     opacity: 1;
