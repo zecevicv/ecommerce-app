@@ -228,6 +228,11 @@
     height: 67px;
     margin-bottom: 50px;
 
+    @media only screen and (max-width: $breakpoint-xl) {
+      height: 55px;
+      margin-bottom: 45px;
+    }
+
     @media only screen and (max-width: $breakpoint-md) {
       margin-bottom: 30px;
       height: 50px;
