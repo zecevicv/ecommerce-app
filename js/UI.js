@@ -26,6 +26,13 @@ export class UI {
           header.classList.remove('header--white');
         }
       });
+      if(window.scrollY > 0) {
+        header.classList.remove('header--transparent');
+        header.classList.add('header--white');
+      } else {
+        header.classList.add('header--transparent');
+        header.classList.remove('header--white');
+      }
     } else {
       // If header is white by default add top padding to the body element
       body.style.paddingTop = headerHeight + 'px';
