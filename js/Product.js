@@ -1,6 +1,4 @@
-import {
-  ShoppingCart
-} from "./ShoppingCart.js";
+import {ShoppingCart} from "./ShoppingCart.js";
 
 export class Product {
   constructor(product) {
