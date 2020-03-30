@@ -7,7 +7,7 @@
 
 // 2. Vendors
 @import 'vendors/normalize';
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import 'vendors/swiper';
 
 // 3. Base stuff
 @import 'base/base';
@@ -28,7 +28,7 @@
 @import 'components/label-icon';
 @import 'components/pagination';
 @import 'components/product';
-@import 'components/products-slider';
+@import 'components/product-slider';
 @import 'components/quantity';
 @import 'components/social-link';
 @import 'components/subscription';

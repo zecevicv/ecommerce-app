@@ -16,6 +16,7 @@
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css">
    <!-- Script -->
+   <script src="https://unpkg.com/swiper/js/swiper.min.js" defer></script>
   <script type="module" src="js/app.js"></script>
 </head>
 
@@ -74,14 +75,126 @@
   </div>
 
   <!-- Products Slider -->
-  <div class="container">
-    <!-- Title -->
-    <h2 class="heading-lg">
-      Related Products
-      <a href="products.html" class="btn btn--bordered">Show More</a>
-    </h2>
-    <!-- Products -->
-    <div class="products-slider" id="productSlider3">
+  <div class="product-slider__wrapper" id="productSliderWrapper3">
+    <div class="container">
+      <!-- Title -->
+      <h2 class="heading-lg">
+        Related Products
+        <a href="products.html" class="btn btn--bordered">Show More</a>
+      </h2>
+      <!-- Product Slider -->
+      <div class="swiper-container product-slider" id="productSlider3">
+        <!-- Products Wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Swiper Slide -->
+          <div class="swiper-slide product">
+            <figure class="product__img">
+              <img src="../img/products/product-4_01.jpg" alt="product-img">
+              <div class="product__overlay">
+                <div class="product__icons">
+                  <a href="#" class="product__add-to-cart">
+                    <img src="img/icons/cart-orange-rounded.svg" alt="add-to-cart-icon">
+                  </a>
+                  <a href="single-product.html?id=436781">
+                    <img src="img/icons/eye-white-rounded.svg" alt="view-product-icon">
+                  </a>
+                </div>
+              </div>
+            </figure>
+            <div class="product__info">
+              <h3 class="product__title">'Bodacious Period' Slim Fit T-Shirt</h3>
+              <p class="product__price product__price--sale">
+                <span class="new-price">$17.99</span><span class="old-price">$24.99</span>
+              </p>
+            </div>
+            <div class="product__label">
+              <div class="label-icon label-icon--sale">Sale</div>
+            </div>
+          </div>
+          <!-- Swipe Slide -->
+          <div class="swiper-slide product">
+            <figure class="product__img">
+              <img src="../img/products/product-5_01.jpg" alt="product-img">
+              <div class="product__overlay">
+                <div class="product__icons">
+                  <a href="#" class="product__add-to-cart">
+                    <img src="img/icons/cart-orange-rounded.svg" alt="add-to-cart-icon">
+                  </a>
+                  <a href="single-product.html?id=119863">
+                    <img src="img/icons/eye-white-rounded.svg" alt="view-product-icon">
+                  </a>
+                </div>
+              </div>
+            </figure>
+            <div class="product__info">
+              <h3 class="product__title">'Sea Emperor' Slim Fit T-Shirt</h3>
+              <p class="product__price product__price--sale">
+                $24.99
+              </p>
+            </div>
+            <div class="product__label">
+              <div class="label-icon label-icon--hot">Hot</div>
+            </div>
+          </div>
+          <!-- Swiper Slide -->
+          <div class="swiper-slide product">
+            <figure class="product__img">
+              <img src="../img/products/product-9_01.jpg" alt="product-img">
+              <div class="product__overlay">
+                <div class="product__icons">
+                  <a href="#" class="product__add-to-cart">
+                    <img src="img/icons/cart-orange-rounded.svg" alt="add-to-cart-icon">
+                  </a>
+                  <a href="single-product.html?id=156557">
+                    <img src="img/icons/eye-white-rounded.svg" alt="view-product-icon">
+                  </a>
+                </div>
+              </div>
+            </figure>
+            <div class="product__info">
+              <h3 class="product__title">'Gulf Racing Retro' Slim Fit T-Shirt</h3>
+              <p class="product__price product__price--sale">
+                <span class="new-price">$17.99</span><span class="old-price">$24.99</span>
+              </p>
+            </div>
+            <div class="product__label">
+              <div class="label-icon label-icon--sale">Sale</div>
+            </div>
+          </div>
+          <!-- Swipe Slide -->
+          <div class="swiper-slide product">
+            <figure class="product__img">
+              <img src="../img/products/product-1_01.jpg" alt="product-img">
+              <div class="product__overlay">
+                <div class="product__icons">
+                  <a href="#" class="product__add-to-cart">
+                    <img src="img/icons/cart-orange-rounded.svg" alt="add-to-cart-icon">
+                  </a>
+                  <a href="single-product.html?id=274901">
+                    <img src="img/icons/eye-white-rounded.svg" alt="view-product-icon">
+                  </a>
+                </div>
+              </div>
+            </figure>
+            <div class="product__info">
+              <h3 class="product__title">'Create Don't Hate' Slim Fit T-Shirt</h3>
+              <p class="product__price product__price--sale">
+                $24.99
+              </p>
+            </div>
+            <div class="product__label">
+              <div class="label-icon label-icon--hot">Hot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="swiper-navigation-btns">
+      <div class="container">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
   </div>
 

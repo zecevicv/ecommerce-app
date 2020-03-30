@@ -6,6 +6,7 @@ export class UI {
     this.currentPage = 0;
 
     this.animateHeader();
+    this.initializeChoseUsSlider();
     this.paginationHandler();
   }
 
@@ -85,7 +86,7 @@ export class UI {
   static outputProducts() {
     const products = JSON.parse(localStorage.getItem('products'));
     UI.outputProductList(0);
-    UI.outputProductSliders(products);
+    UI.outputProductSliders();
     UI.outputSingleProduct(products);
     UI.outputCartProducts(products);
   }
@@ -107,52 +108,114 @@ export class UI {
     }
   }
 
-  static outputProductSliders(products) {
+  static outputProductSliders() {
     const productSlider1 = document.querySelector('#productSlider1');
     const productSlider2 = document.querySelector('#productSlider2');
     const productSlider3 = document.querySelector('#productSlider3');
 
     // Products on sale slider
     if (productSlider1) {
-      let numOfProducts = 0;
-      for (let i = 0; i < products.length; i++) {
-        if (products[i].salePrice > 0 && numOfProducts <= 3) {
-          numOfProducts++;
-          const productTemplate = Product.createProductTemplate(products[i]);
-          productSlider1.appendChild(productTemplate);
-        }
-      }
+      let slider1 = new Swiper (productSlider1, {
+        slidesPerView: 4,
+        spaceBetween: 40,
+        loop: true,
+
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true,
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            autoplay: false,
+            spaceBetween: 15
+          },
+          767: {
+            slidesPerView: 3,
+            autoplay: false,
+            spaceBetween: 30
+          },
+          991: {
+            autoplay: true
+          },
+        },
+  
+        navigation: {
+          nextEl: '#productSliderWrapper1 .swiper-button-next',
+          prevEl: '#productSliderWrapper1 .swiper-button-prev',
+        },
+      });
     }
 
     // Hot & Trending products slider
     if (productSlider2) {
-      let numOfProducts = 0;
-      for (let i = 0; i < products.length; i++) {
-        if (products[i].label === "hot" && numOfProducts <= 3) {
-          numOfProducts++;
-          const productTemplate = Product.createProductTemplate(products[i]);
-          productSlider2.appendChild(productTemplate);
-        }
-      }
+      let slider2 = new Swiper (productSlider2, {
+        slidesPerView: 4,
+        spaceBetween: 40,
+        loop: true,
+
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true,
+        },
+        
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            autoplay: false,
+            spaceBetween: 15
+          },
+          767: {
+            slidesPerView: 3,
+            autoplay: false,
+            spaceBetween: 30
+          },
+          991: {
+            autoplay: true
+          },
+        },
+  
+        navigation: {
+          nextEl: '#productSliderWrapper2 .swiper-button-next',
+          prevEl: '#productSliderWrapper2 .swiper-button-prev',
+        },
+      });
     }
 
     // Related Products slider
     if (productSlider3) {
-      let rndNums = [];
+      let slider3 = new Swiper (productSlider3, {
+        slidesPerView: 4,
+        spaceBetween: 40,
+        loop: true,
 
-      let runs = 0;
-      for (let i = 0; i < 100; i++) {
-        const rnd = Math.floor(Math.random() * 15);
-        if (!rndNums.includes(rnd) && runs <= 3) {
-          runs++;
-          rndNums.push(rnd);
-        }
-      }
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true,
+        },
 
-      for (let i = 0; i < rndNums.length; i++) {
-        const productTemplate = Product.createProductTemplate(products[rndNums[i]]);
-        productSlider3.appendChild(productTemplate);
-      }
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            autoplay: false,
+            spaceBetween: 15
+          },
+          767: {
+            slidesPerView: 3,
+            autoplay: false,
+            spaceBetween: 30
+          },
+          991: {
+            autoplay: true
+          },
+        },
+  
+        navigation: {
+          nextEl: '#productSliderWrapper3 .swiper-button-next',
+          prevEl: '#productSliderWrapper3 .swiper-button-prev',
+        },
+      });
     }
   }
 
@@ -208,6 +271,40 @@ export class UI {
 
     // Update shopping cart number indicator
     this.updateShoppingCartNumber();
+  }
+
+  initializeChoseUsSlider() {
+    const choseUsSliderEl = document.querySelector('#choseUsSlider');
+
+    if (choseUsSliderEl) {
+      let choseUsSlider = new Swiper (choseUsSliderEl, {
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            noSwiping: false,
+            allowSlidePrev: true,
+            allowSlideNext: true,
+          },
+          585: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          991: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+            noSwiping: true,
+            allowSlidePrev: false,
+            allowSlideNext: false,
+          },
+        }
+      });
+    }
   }
 
   paginationHandler() {

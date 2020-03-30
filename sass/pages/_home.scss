@@ -117,6 +117,14 @@
 .why-choose-us {
   margin: 70px 0 140px 0;
 
+  @media only screen and (max-width: $breakpoint-xl) {
+    margin: 50px 0 110px 0;
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    margin: 20px 0 90px 0;
+  }
+
   h2 {
     margin-bottom: 90px;
   }
@@ -130,6 +138,12 @@
   @media only screen and (max-width: $breakpoint-md) {
     h2 {
       margin-bottom: 70px;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    h2 {
+      margin-bottom: 50px;
     }
   }
 
@@ -166,6 +180,7 @@
 
       @media only screen and (max-width: $breakpoint-md) {
         margin: 0 auto 25px auto;
+        height: 50px;
       }
     }
 
@@ -189,14 +204,15 @@
         margin: 0 auto;
         max-width: 250px;
       }
+      
+      @media only screen and (max-width: $breakpoint-sm) {
+        max-width: 260px;
+        font-size: 12px;
+      }
     }
 
     @media only screen and (max-width: $breakpoint-lg) {
       text-align: center;
     }
-  }
-
-  @media only screen and (max-width: $breakpoint-xl) {
-    margin: 50px 0 110px 0;
   }
 }

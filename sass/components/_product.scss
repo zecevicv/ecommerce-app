@@ -3,7 +3,7 @@
   flex-direction: column;
   position: relative;
   box-shadow: 0 0 3px rgba(0, 0, 0, .1);
-  transition: $transition-slowest;
+  transition: box-shadow .4s ease;
   
   &__img {
     overflow: hidden;
@@ -29,12 +29,15 @@
   &__title {
     font-size: 16px;
     font-weight: 300;
-
+    min-height: 48px;
+    
     @media only screen and (max-width: $breakpoint-xl) {
       font-size: 14px;
+      min-height: 42px;
     }
-
+    
     @media only screen and (max-width: $breakpoint-sm) {
+      min-height: 36px;
       font-size: 12px;
     }
   }

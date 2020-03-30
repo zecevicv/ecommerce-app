@@ -1,0 +1,106 @@
+// Product Slider
+.product-slider__wrapper {
+  position: relative;
+
+  .product-slider {
+    padding: 70px 10px;
+    margin: 0 -10px;
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      padding: 50px 10px 60px 10px;
+    }
+  }
+  
+  .swiper-button-prev, .swiper-button-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $white;
+    transition: $transition-slowest;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+    transform: translateX(-50%);
+    
+    @media only screen and (max-width: $breakpoint-sm) {
+      left: 5px;
+      transform: translateX(0);
+    }
+    
+    &::after {
+      content: '';
+      width: 18px;
+      height: 16px;
+      background-image: url('../img/icons/arrow-black.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        width: 14px;
+        height: 12px;
+      }
+      
+      @media only screen and (max-width: $breakpoint-xl) {
+        width: 10px;
+        height: 9px;
+      }
+    }
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+    transform: translateX(50%);
+    
+    @media only screen and (max-width: $breakpoint-sm) {
+      right: 5px;
+      transform: translateX(0);
+    }
+  
+    &::after {
+      content: '';
+      width: 18px;
+      height: 16px;
+      background-image: url('../img/icons/arrow-black.svg');
+      transform: rotate(180deg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        width: 14px;
+        height: 12px;
+      }
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        width: 10px;
+        height: 9px;
+      }
+    }
+  }
+  
+  .swiper-button-prev:hover, .swiper-button-next:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+  }
+
+  .swiper-navigation-btns {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+
+    .container {
+      position: relative;
+    }
+  }
+}
