@@ -215,4 +215,27 @@
       text-align: center;
     }
   }
+
+  .swiper-container {
+    padding-bottom: 40px;
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 100%;
+      background: $white;
+      opacity: 1;
+      border: 1px solid $gray;
+    }
+
+    .swiper-pagination-bullet-active {
+      border: 1px solid $orange;
+      background-color: $orange;
+    }
+  }
 }

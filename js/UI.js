@@ -305,6 +305,9 @@ export class UI {
           delay: 5000,
           disableOnInteraction: true,
         },
+        pagination: {
+          el: '.swiper-pagination',
+        },
         loop: true,
         breakpoints: {
           0: {
@@ -324,6 +327,7 @@ export class UI {
             noSwiping: true,
             allowSlidePrev: false,
             allowSlideNext: false,
+            pagination: ''
           },
         }
       });
