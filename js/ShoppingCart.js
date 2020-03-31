@@ -156,7 +156,7 @@ export class ShoppingCart {
       let products = JSON.parse(localStorage.getItem('shoppingCart'));
       let totalPrice = 0;
       products.forEach((product) => {
-        totalPrice = totalPrice + (parseInt(product.price) * parseInt(product.quantity));
+        totalPrice = totalPrice + (parseFloat(product.price) * parseFloat(product.quantity));
       });
       totalPriceEl.innerHTML = `$${totalPrice.toFixed(2)}`;
     }
