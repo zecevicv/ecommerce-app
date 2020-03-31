@@ -12,6 +12,12 @@ html {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
+
+  user-select: none!important; /* standard syntax */
+  -webkit-user-select: none!important; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none!important; /* mozilla browsers */
+  -khtml-user-select: none!important; /* webkit (konqueror) browsers */
+  -ms-user-select: none!important; /* IE10+ */
 }
 
 *:focus {
