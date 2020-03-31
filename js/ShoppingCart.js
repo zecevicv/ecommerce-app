@@ -48,6 +48,8 @@ export class ShoppingCart {
     });
     localStorage.setItem('shoppingCart', JSON.stringify(products));
 
+    // Rerender the cart
+    UI.outputCartProducts();
     // Update shopping cart number indicator
     UI.updateShoppingCartNumber();
   }

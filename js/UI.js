@@ -253,8 +253,10 @@ export class UI {
 
     // Render products to the shopping cart
     if (cart) {
-      const shoppingCartOutput = document.querySelector('#shoppingCartOutput');
+      const shoppingCartOutput = document.querySelector('#cartOutput');
       const shoppingCartProducts = JSON.parse(localStorage.getItem('shoppingCart'));
+      const shoppingCartNoProduct = document.querySelector('#cartNoProducts');
+      const shoppingCartTable = document.querySelector('#cartTable');
       
       const outputCartProduct = (item, quantity) => {
         const cartProductTemplate = ShoppingCart.createCartProductTemplate(item, parseInt(quantity));
@@ -262,7 +264,10 @@ export class UI {
         shoppingCartOutput.appendChild(cartProductTemplate);
       }
 
-      if (shoppingCartProducts) {
+      if (shoppingCartProducts  && shoppingCartProducts.length > 0) {
+        console.log(shoppingCartProducts);
+        shoppingCartNoProduct.classList.remove('display');
+        shoppingCartTable.classList.add('display');
         shoppingCartProducts.forEach((cartProduct) => {
           products.forEach((product) => {
             if(product.id === cartProduct.productId) {
@@ -270,6 +275,9 @@ export class UI {
             }
           })
         });
+      } else {
+        shoppingCartNoProduct.classList.add('display');
+        shoppingCartTable.classList.remove('display');
       }
 
       // Connect quantityHandler
