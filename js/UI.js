@@ -39,13 +39,6 @@ export class UI {
     }
   }
 
-  renderTotalPrice(totalPrice) {
-    const priceEl = document.querySelector('.price');
-    if (priceEl) {
-      priceEl.innerHTML = `$${price.toFixed(2)}`;
-    }
-  }
-
   static updateShoppingCartNumber() {
     const numberUI = document.querySelector('.shopping-cart__number');
     if (numberUI && localStorage.getItem('shoppingCart')) {

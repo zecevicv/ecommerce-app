@@ -141,6 +141,7 @@ export class ShoppingCart {
       const cartProduct = e.target.closest('.cart-product');
       ShoppingCart.removeFromShoppingCart(product.id);
       cartProduct.parentNode.removeChild(cartProduct);
+      ShoppingCart.updateTotalPrice();
     });
 
     ShoppingCart.updateTotalPrice();
