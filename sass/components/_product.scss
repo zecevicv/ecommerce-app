@@ -122,6 +122,10 @@
 
       &:hover {
         transform: translateY(-3px);
+        
+        @media only screen and (max-width: $breakpoint-sm) {
+          transform: translateY(0);
+        }
       }
 
       @media only screen and (max-width: $breakpoint-lg) {

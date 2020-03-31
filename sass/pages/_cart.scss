@@ -186,6 +186,37 @@
     }
   }
 
+  &__notification {
+    background-color: $white;
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding: 20px 30px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: transform 0.3s ease-in-out;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      padding: 15px 20px;
+    }
+    
+    p {
+      max-width: 100%;
+      font-size: 14px;
+      white-space: nowrap;
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        font-size: 12px;
+      }
+    }
+
+    &.display {
+      transform: translate(-50%, 0);
+    }
+  }
+
   &__footer {
     display: flex;
     align-items: center;

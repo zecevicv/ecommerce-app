@@ -95,7 +95,7 @@ export class UI {
     UI.outputProductList(0);
     UI.outputProductSliders();
     UI.outputSingleProduct(products);
-    UI.outputCartProducts(products);
+    UI.outputCartProducts();
   }
   
   static outputProductList(currentPage) {
@@ -248,11 +248,12 @@ export class UI {
     }
   }
 
-  static outputCartProducts(products) {
+  static outputCartProducts() {
     const cart = document.querySelector('.cart');
 
     // Render products to the shopping cart
     if (cart) {
+      const products = JSON.parse(localStorage.getItem('products'));
       const shoppingCartOutput = document.querySelector('#cartOutput');
       const shoppingCartProducts = JSON.parse(localStorage.getItem('shoppingCart'));
       const shoppingCartNoProduct = document.querySelector('#cartNoProducts');
@@ -265,9 +266,12 @@ export class UI {
       }
 
       if (shoppingCartProducts  && shoppingCartProducts.length > 0) {
-        console.log(shoppingCartProducts);
-        shoppingCartNoProduct.classList.remove('display');
-        shoppingCartTable.classList.add('display');
+        if (shoppingCartNoProduct.classList.contains('display')) {
+          shoppingCartNoProduct.classList.remove('display');
+        }
+        if (!shoppingCartTable.classList.contains('display')) {
+          shoppingCartTable.classList.add('display');
+        }
         shoppingCartProducts.forEach((cartProduct) => {
           products.forEach((product) => {
             if(product.id === cartProduct.productId) {
@@ -276,8 +280,12 @@ export class UI {
           })
         });
       } else {
-        shoppingCartNoProduct.classList.add('display');
-        shoppingCartTable.classList.remove('display');
+        if (!shoppingCartNoProduct.classList.contains('display')) {
+          shoppingCartNoProduct.classList.add('display');
+        }
+        if (shoppingCartTable.classList.contains('display')) {
+          shoppingCartTable.classList.remove('display');
+        }
       }
 
       // Connect quantityHandler
@@ -350,5 +358,25 @@ export class UI {
       top: 0,
       behavior: 'smooth',
     })
+  }
+
+  static showCartNotification(message) {
+    const cartNotification = document.querySelector('#cartNotification');
+    const cartNotificationMessage = document.querySelector('#cartNotificationMessage');
+
+    cartNotificationMessage.innerHTML = message;
+
+    cartNotification.classList.add('display');
+    setTimeout(() => {
+      cartNotification.classList.remove('display');
+    }, 2500);
+  }
+
+  static showCartNoProducts() {
+    const shoppingCartTable = document.querySelector('#cartTable');
+    const shoppingCartNoProduct = document.querySelector('#cartNoProducts');
+
+    shoppingCartNoProduct.classList.add('display');
+    shoppingCartTable.classList.remove('display');
   }
 }

@@ -14,14 +14,17 @@ export class ShoppingCart {
       const products = JSON.parse(localStorage.getItem('shoppingCart'));
       if (ShoppingCart.isInTheCart(product)) {
         localStorage.setItem('shoppingCart', JSON.stringify(products));
+        UI.showCartNotification('<span class="text-green">&#10004</span> Product already in the cart');
       } else {
         products.push(product);
         localStorage.setItem('shoppingCart', JSON.stringify(products));
+        UI.showCartNotification('<span class="text-green">&#10004</span> Product added to the cart');
       }
     } else {
       const products = [];
       products.push(product);
       localStorage.setItem('shoppingCart', JSON.stringify(products));
+      UI.showCartNotification('<span class="text-green">&#10004</span> Product added to the cart');
     }
 
     // Update shopping cart number indicator
@@ -48,8 +51,10 @@ export class ShoppingCart {
     });
     localStorage.setItem('shoppingCart', JSON.stringify(products));
 
-    // Rerender the cart
-    UI.outputCartProducts();
+    if (products.length === 0) {
+      UI.showCartNoProducts();
+    }
+
     // Update shopping cart number indicator
     UI.updateShoppingCartNumber();
   }
@@ -129,9 +134,6 @@ export class ShoppingCart {
       }
     });
     
-    
-    // Calculate total price of all products in the cart
-    // totalPrice = totalPrice + (product.salePrice === 0 ? product.price * quantity : product.salePrice * quantity);
     // Remove Product Handler
     const removeProductBtn = cartProduct.querySelector('.cart__product-remove');
     removeProductBtn.addEventListener('click', (e) => {
