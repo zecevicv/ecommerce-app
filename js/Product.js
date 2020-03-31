@@ -11,17 +11,12 @@ export class Product {
   }
 
   static createProductTemplate(product) {
-    const productTemplate = document.createElement('DIV');
+    const productTemplate = document.createElement('A');
     productTemplate.className = 'product';
+    productTemplate.setAttribute('href', `single-product.html?id=${product.id}`);
     productTemplate.innerHTML = `
       <figure class="product__img">
         <img src="${product.images[0]}" alt="product-img">
-        <div class="product__overlay">
-          <div class="product__icons">
-            <a href="#" class="product__add-to-cart"><img src="img/icons/cart-orange-rounded.svg" alt="add-to-cart-icon"></a>
-            <a href="single-product.html?id=${product.id}"><img src="img/icons/eye-white-rounded.svg" alt="view-product-icon"></a>
-          </div>
-        </div>
       </figure>
       <div class="product__info">
         <h3 class="product__title">${product.name}</h3>
@@ -33,11 +28,6 @@ export class Product {
       ${product.label === "hot" ? `<div class="product__label"><div class="label-icon label-icon--hot">Hot</div></div>` : ''}
       ${product.label === "new" ? `<div class="product__label"><div class="label-icon label-icon--new">New</div></div>` : ''}
       `;
-    const addToCartBtn = productTemplate.querySelector('.product__add-to-cart');
-    addToCartBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      ShoppingCart.addToShoppingCart(product.id, 1, (product.salePrice === 0 ? product.price : product.salePrice));
-    });
     return productTemplate;
   }
 
