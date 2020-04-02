@@ -9,6 +9,12 @@
   &__img {
     overflow: hidden;
     position: relative;
+
+    img {
+      transition: transform .4s;
+      transform: scale(1.01);
+      backface-visibility: hidden;
+    }
   }
 
   &__info {
@@ -101,5 +107,9 @@
 
   &:hover {
     box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+
+    .product__img img {
+      transform: scale(1.07);
+    }
   }
 }
