@@ -24,7 +24,7 @@
   }
 
   @media only screen and (max-width: $breakpoint-lg) {
-    padding-right: 10px;
+    padding-right: 15px;
   }
 
   @media only screen and (max-width: $breakpoint-md) {
@@ -60,14 +60,14 @@
   flex: 0 0 50%;
   padding-left: 55px;
   display: flex;
+  flex-direction: column;
 
   @media only screen and (max-width: $breakpoint-xl) {
     padding-left: 25px;
   }
 
   @media only screen and (max-width: $breakpoint-lg) {
-    flex-direction: column;
-    padding-left: 10px;
+    padding-left: 15px;
   }
 
   @media only screen and (max-width: $breakpoint-md) {
@@ -75,34 +75,26 @@
   }
 
   &-left {
-    flex: 0 0 75%;
-
-    @media only screen and (max-width: $breakpoint-lg) {
-      flex: 0;
-    }
+    flex: 0;
   }
 
   &-right {
-    flex: 0 0 25%;
-
-    @media only screen and (max-width: $breakpoint-lg) {
-      flex: 0;
-      flex-grow: 1;
-      display: flex;
-      padding-top: 30px;
-    }
+    flex: 0;
+    flex-grow: 1;
+    display: flex;
+    padding-top: 30px;
   }
 
   .single-product__sale {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      margin-bottom: 20px;
+    }
   }
 
   .single-product__main-info {
-    margin-bottom: 60px;
-
-    @media only screen and (max-width: $breakpoint-lg) {
-      margin-bottom: 40px;
-    }
+    margin-bottom: 40px;
 
     @media only screen and (max-width: $breakpoint-sm) {
       margin-bottom: 20px;
@@ -111,7 +103,7 @@
     .single-product__title {
       font-size: 30px;
       font-weight: 300;
-      max-width: 350px;
+      margin-bottom: 15px;
 
       @media only screen and (max-width: $breakpoint-lg) {
         font-size: 22px;
@@ -140,11 +132,35 @@
     }
   }
 
-  .single-product__add-to-cart {
+  .single-product__color {
+    margin-bottom: 40px;
+
+    &-box {
+      padding: 8px;
+      border: 1px solid $light-gray;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    &-hex {
+      width: 25px;
+      height: 25px;
+      border: 1px solid $offwhite;
+    }
+
     p {
       font-size: 13px;
       font-weight: 300;
       margin-bottom: 15px;
+    }
+  }
+
+  .single-product__add-to-cart {
+    p {
+      font-size: 13px;
+      font-weight: 300;
+      margin-bottom: 25px;
     }
 
     @media only screen and (max-width: $breakpoint-sm) {
@@ -156,20 +172,8 @@
 
   .single-product__id {
     font-size: 12px;
-    color: $gray;
-    text-align: right;
-
-    @media only screen and (max-width: $breakpoint-lg) {
-      text-align: left;
-    }
-
-    span {
-      display: block;
-
-      @media only screen and (max-width: $breakpoint-lg) {
-        display: inline-block;
-      }
-    }
+    color: $black;
+    font-weight: 300;
   }
 
   .single-product__brand {
@@ -230,22 +234,28 @@
 
     @media only screen and (max-width: $breakpoint-xl) {
       height: 55px;
-      margin-bottom: 45px;
+      margin-bottom: 30px;
     }
 
-    @media only screen and (max-width: $breakpoint-md) {
+    @media only screen and (max-width: $breakpoint-lg) {
       margin-bottom: 30px;
-      height: 50px;
+      height: 40px;
     }
   }
 
   &-heading {
     font-size: 16px;
     margin-bottom: 35px;
+    font-weight: 600;
 
-    @media only screen and (max-width: $breakpoint-md) {
-      margin-bottom: 20px;
+    @media only screen and (max-width: $breakpoint-xl) {
+      margin-bottom: 15px;
       font-size: 14px;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      font-size: 12px;
+      margin-bottom: 12px;
     }
   }
 
@@ -254,14 +264,22 @@
     max-width: 430px;
     margin: 0 auto;
 
-    @media only screen and (max-width: $breakpoint-md) {
+    @media only screen and (max-width: $breakpoint-xl) {
+      font-size: 13px;
+    }
+
+    @media only screen and (max-width: $breakpoint-lg) {
       font-size: 12px;
       max-width: 300px;
     }
   }
 
   &-label {
-    max-width: 200px;
+    max-width: 175px;
     margin: 10px auto 0 auto;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+      max-width: 150px;
+    }
   }
 }

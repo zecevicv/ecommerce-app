@@ -1,0 +1,81 @@
+.checkbox {
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.checkbox label {
+	position: relative;
+	padding: 0 0 0 30px;
+	vertical-align: middle;
+	margin: 0;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.checkbox label::before {
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: #ffffff;
+	border: 1px solid $light-gray;
+	border-radius: 3px;
+	transition: all 0.15s ease-in-out;
+	transform: translateY(-50%);
+}
+
+.checkbox label:hover::before {
+	box-shadow: 0 0 3px rgba(0,0,0, .1);
+}
+
+.checkbox label::after {
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	color: #000000;
+	transform: translateY(-50%);
+	display: flex;
+}
+
+.checkbox input[type="checkbox"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.checkbox input[type="checkbox"]:focus+label::before {
+	outline: none;
+}
+
+.checkbox input[type="checkbox"]:checked+label::before {
+	border: 1px solid $gray;
+  border-radius: 3px;
+	box-shadow: 0 0 3px rgba(0,0,0, .1);
+  // background-color: $offwhite;
+}
+
+.checkbox input[type="checkbox"]:checked+label::after {
+  content: "";
+  width: 18px;
+	height: 18px;
+	background-image: url('../img/icons/checkmark-black.svg');
+	background-repeat: no-repeat;
+  background-position: center;
+  color: $black;
+	position: absolute;
+	left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}

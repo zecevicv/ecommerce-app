@@ -6,6 +6,7 @@
 @import 'abstracts/mixins';
 
 // 2. Vendors
+@import 'vendors/bootstrap-d';
 @import 'vendors/normalize';
 @import 'vendors/swiper';
 
@@ -23,6 +24,7 @@
 @import 'components/banner';
 @import 'components/breadcrumb';
 @import 'components/button';
+@import 'components/checkbox';
 @import 'components/filter';
 @import 'components/input';
 @import 'components/label-icon';

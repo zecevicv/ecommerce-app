@@ -10,7 +10,9 @@
         "../img/products/product-1_02.jpg",
         "../img/products/product-1_03.jpg"
       ],
-      "label": "hot"
+      "label": "hot",
+      "gender": "m",
+      "color": "black"
     }, 
     {
       "name": "'Laika' Slim Fit T-Shirt",
@@ -22,7 +24,9 @@
         "../img/products/product-2_02.jpg",
         "../img/products/product-2_03.jpg"
       ],
-      "label": "hot"
+      "label": "hot",
+      "gender": "m",
+      "color": "white"
     }, 
     {
       "name": "'The Great Ramen' Slim Fit T-Shirt",
@@ -33,7 +37,9 @@
         "../img/products/product-3_01.jpg",
         "../img/products/product-3_02.jpg",
         "../img/products/product-3_03.jpg"
-      ]
+      ],
+      "gender": "w",
+      "color": "red"
     }, 
     {
       "name": "'Bodacious Period' Slim Fit T-Shirt",
@@ -44,7 +50,9 @@
         "../img/products/product-4_01.jpg",
         "../img/products/product-4_02.jpg",
         "../img/products/product-4_03.jpg"
-      ]
+      ],
+      "gender": "w",
+      "color": "blue"
     }, 
     {
       "name": "'Sea Emperor' Slim Fit T-Shirt",
@@ -56,7 +64,9 @@
         "../img/products/product-5_02.jpg",
         "../img/products/product-5_03.jpg"
       ],
-      "label": "hot"
+      "label": "hot",
+      "gender": "w",
+      "color": "gray"
     }, 
     {
       "name": "'MTN LP' Slim Fit T-Shirt",
@@ -68,7 +78,9 @@
         "../img/products/product-6_02.jpg",
         "../img/products/product-6_03.jpg"
       ],
-      "label": "hot"
+      "label": "hot",
+      "gender": "m",
+      "color": "yellow"
     }, 
     {
       "name": "'I'm Dogtor' Slim Fit T-Shirt",
@@ -80,7 +92,9 @@
         "../img/products/product-7_02.jpg",
         "../img/products/product-7_03.jpg"
       ],
-      "label": "new"
+      "label": "new",
+      "gender": "m",
+      "color": "green"
     }, 
     {
       "name": "'Fuji Classic' Slim Fit T-Shirt",
@@ -92,7 +106,9 @@
         "../img/products/product-8_02.jpg",
         "../img/products/product-8_03.jpg"
       ],
-      "label": "new"
+      "label": "new",
+      "gender": "w",
+      "color": "green"
     }, 
     {
       "name": "'Gulf Racing Retro' Slim Fit T-Shirt",
@@ -103,7 +119,9 @@
         "../img/products/product-9_01.jpg",
         "../img/products/product-9_02.jpg",
         "../img/products/product-9_03.jpg"
-      ]
+      ],
+      "gender": "m",
+      "color": "blue"
     }, 
     {
       "name": "'Panda Boxer' Slim Fit T-Shirt",
@@ -115,7 +133,9 @@
         "../img/products/product-10_02.jpg",
         "../img/products/product-10_03.jpg"
       ],
-      "label": "new"
+      "label": "new",
+      "gender": "w",
+      "color": "white"
     }, 
     {
       "name": "'CHAOS' Slim Fit T-Shirt",
@@ -127,7 +147,9 @@
         "../img/products/product-11_02.jpg",
         "../img/products/product-11_03.jpg"
       ],
-      "label": "new"
+      "label": "new",
+      "gender": "m",
+      "color": "gray"
     }, 
     {
       "name": "'Magna' Slim Fit T-Shirt",
@@ -138,7 +160,9 @@
         "../img/products/product-12_01.jpg",
         "../img/products/product-12_02.jpg",
         "../img/products/product-12_03.jpg"
-      ]
+      ],
+      "gender": "w",
+      "color": "black"
     }, 
     {
       "name": "'Music Man' Slim Fit T-Shirt",
@@ -149,7 +173,9 @@
         "../img/products/product-13_01.jpg",
         "../img/products/product-13_02.jpg",
         "../img/products/product-13_03.jpg"
-      ]
+      ],
+      "gender": "m",
+      "color": "white"
     }, 
     {
       "name": "'BOWL' Slim Fit T-Shirt",
@@ -160,7 +186,9 @@
         "../img/products/product-14_01.jpg",
         "../img/products/product-14_02.jpg",
         "../img/products/product-14_03.jpg"
-      ]
+      ],
+      "gender": "w",
+      "color": "red"
     }, 
     {
       "name": "'Squish That Cat' Slim Fit T-Shirt",
@@ -171,7 +199,9 @@
         "../img/products/product-15_01.jpg",
         "../img/products/product-15_02.jpg",
         "../img/products/product-15_03.jpg"
-      ]
+      ],
+      "gender": "m",
+      "color": "blue"
     }
   ]
 }

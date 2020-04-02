@@ -1,5 +1,9 @@
-import { Product } from "./Product.js";
-import { ShoppingCart } from "./ShoppingCart.js";
+import {
+  Product
+} from "./Product.js";
+import {
+  ShoppingCart
+} from "./ShoppingCart.js";
 
 export class UI {
   constructor() {
@@ -8,6 +12,11 @@ export class UI {
     this.animateHeader();
     this.initializeChoseUsSlider();
     this.paginationHandler();
+
+    if (document.querySelector('.products')) {
+      this.initializePriceSlider();
+      this.filtersHandler();
+    }
   }
 
   animateHeader() {
@@ -18,7 +27,7 @@ export class UI {
     if (header.classList.contains('header--transparent')) {
       // If the header is transparent by default animate it on scroll
       window.addEventListener('scroll', () => {
-        if(window.scrollY > 0) {
+        if (window.scrollY > 0) {
           header.classList.remove('header--transparent');
           header.classList.add('header--white');
         } else {
@@ -26,7 +35,7 @@ export class UI {
           header.classList.remove('header--white');
         }
       });
-      if(window.scrollY > 0) {
+      if (window.scrollY > 0) {
         header.classList.remove('header--transparent');
         header.classList.add('header--white');
       } else {
@@ -90,10 +99,10 @@ export class UI {
     UI.outputSingleProduct(products);
     UI.outputCartProducts();
   }
-  
+
   static outputProductList(currentPage) {
     const productList = document.querySelector('.products__list');
-    
+
     if (productList) {
       productList.innerHTML = '';
       const products = JSON.parse(localStorage.getItem('products'));
@@ -115,7 +124,7 @@ export class UI {
 
     // Products on sale slider
     if (productSlider1) {
-      let slider1 = new Swiper (productSlider1, {
+      let slider1 = new Swiper(productSlider1, {
         slidesPerView: 4,
         spaceBetween: 40,
         loop: true,
@@ -140,7 +149,7 @@ export class UI {
             autoplay: true
           },
         },
-  
+
         navigation: {
           nextEl: '#productSliderWrapper1 .swiper-button-next',
           prevEl: '#productSliderWrapper1 .swiper-button-prev',
@@ -150,7 +159,7 @@ export class UI {
 
     // Hot & Trending products slider
     if (productSlider2) {
-      let slider2 = new Swiper (productSlider2, {
+      let slider2 = new Swiper(productSlider2, {
         slidesPerView: 4,
         spaceBetween: 40,
         loop: true,
@@ -159,7 +168,7 @@ export class UI {
           delay: 5000,
           disableOnInteraction: true,
         },
-        
+
         breakpoints: {
           0: {
             slidesPerView: 2,
@@ -175,7 +184,7 @@ export class UI {
             autoplay: true
           },
         },
-  
+
         navigation: {
           nextEl: '#productSliderWrapper2 .swiper-button-next',
           prevEl: '#productSliderWrapper2 .swiper-button-prev',
@@ -185,7 +194,7 @@ export class UI {
 
     // Related Products slider
     if (productSlider3) {
-      let slider3 = new Swiper (productSlider3, {
+      let slider3 = new Swiper(productSlider3, {
         slidesPerView: 4,
         spaceBetween: 40,
         loop: true,
@@ -210,7 +219,7 @@ export class UI {
             autoplay: true
           },
         },
-  
+
         navigation: {
           nextEl: '#productSliderWrapper3 .swiper-button-next',
           prevEl: '#productSliderWrapper3 .swiper-button-prev',
@@ -251,14 +260,14 @@ export class UI {
       const shoppingCartProducts = JSON.parse(localStorage.getItem('shoppingCart'));
       const shoppingCartNoProduct = document.querySelector('#cartNoProducts');
       const shoppingCartTable = document.querySelector('#cartTable');
-      
+
       const outputCartProduct = (item, quantity) => {
         const cartProductTemplate = ShoppingCart.createCartProductTemplate(item, parseInt(quantity));
         // Render the idem to the UI
         shoppingCartOutput.appendChild(cartProductTemplate);
       }
 
-      if (shoppingCartProducts  && shoppingCartProducts.length > 0) {
+      if (shoppingCartProducts && shoppingCartProducts.length > 0) {
         if (shoppingCartNoProduct.classList.contains('display')) {
           shoppingCartNoProduct.classList.remove('display');
         }
@@ -267,7 +276,7 @@ export class UI {
         }
         shoppingCartProducts.forEach((cartProduct) => {
           products.forEach((product) => {
-            if(product.id === cartProduct.productId) {
+            if (product.id === cartProduct.productId) {
               outputCartProduct(product, cartProduct.quantity);
             }
           })
@@ -293,7 +302,7 @@ export class UI {
     const choseUsSliderEl = document.querySelector('#choseUsSlider');
 
     if (choseUsSliderEl) {
-      let choseUsSlider = new Swiper (choseUsSliderEl, {
+      let choseUsSlider = new Swiper(choseUsSliderEl, {
         autoplay: {
           delay: 5000,
           disableOnInteraction: true,
@@ -329,12 +338,12 @@ export class UI {
 
   paginationHandler() {
     const pagination = document.querySelector('.pagination');
-    
+
     if (pagination) {
       pagination.addEventListener('click', (e) => {
         const buttons = pagination.querySelectorAll('button');
         let currentPage = parseInt(e.target.innerHTML) - 1;
-  
+
         if (e.target.closest('.page')) {
           currentPage = parseInt(e.target.innerHTML) - 1;
           this.scrollToTop();
@@ -375,5 +384,74 @@ export class UI {
 
     shoppingCartNoProduct.classList.add('display');
     shoppingCartTable.classList.remove('display');
+  }
+
+  initializePriceSlider() {
+    const priceSlider = document.getElementById('priceSlider');
+    const inputMin = document.getElementById('inputMin');
+    const inputMax = document.getElementById('inputMax');
+
+    // Initialize Slider
+    noUiSlider.create(priceSlider, {
+      start: [0, 50],
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 50
+      }
+    });
+
+    priceSlider.noUiSlider.on('update', (values, handle) => {
+      let value = values[handle];
+
+      if (handle) {
+        inputMax.value = value;
+      } else {
+        inputMin.value = value;
+      }
+    });
+
+    inputMin.addEventListener('change', () => {
+      priceSlider.noUiSlider.set([inputMin.value, null]);
+    });
+
+    inputMax.addEventListener('change', () => {
+      priceSlider.noUiSlider.set([null, inputMax.value]);
+    });
+  }
+  
+  filtersHandler() {
+    const filters = document.querySelectorAll('.filter');
+    const productFilters = document.querySelectorAll('.products__filters');
+    const filterToggler = document.querySelector('.product__filter-toggler');
+    const viewportWidth = document.documentElement.clientWidth;
+
+    filters.forEach((filter) => {
+      filter.addEventListener('click', (e) => {
+        const filter = e.currentTarget;
+        const filterHeading = filter.querySelector('.filter__heading');
+        const filterBody = filter.querySelector('.filter__body');
+        
+        // Toggle the filter body
+        if (e.target.closest('.filter__heading') && viewportWidth > 991) {
+          filter.classList.toggle('display');
+        }
+
+        // Filter color handler
+        if (e.target.closest('.filter__color')) {
+          const filterColor = e.target.closest('.filter__color');
+          filterColor.classList.toggle('active');
+        }
+      });
+    });
+
+    if (filterToggler && viewportWidth < 992) {
+      filterToggler.addEventListener('click', () => {
+        productFilters.forEach((item) => {
+          item.classList.toggle('display');
+          document.body.classList.toggle('no-scroll');
+        });
+      });
+    }
   }
 }

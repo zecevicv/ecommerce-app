@@ -14,8 +14,10 @@
   <!-- Favicon -->
   <link rel="icon" href="img/icons/favicon.png" sizes="32x32">
   <!-- Style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css" integrity="sha256-IQnSeew8zCA+RvM5fNRro/UY0Aib18qU2WBwGOHZOP0=" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <!-- Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js" integrity="sha256-1ubcV7PzqcMhAz7jsoU3QlAfCnUaY7SUffeHa4Nq3ws=" crossorigin="anonymous"></script>
   <script type="module" src="js/app.js"></script>
 </head>
 
@@ -42,58 +44,81 @@
   </header>
 
   <!-- Products -->
-  <div class="container">
-    <div class="products">
+  <div class="products">
+    <div class="container">
       <!-- Product Side -->
-      <div class="products__side">
-        <!-- Filter -->
-        <div class="filter" id="price">
-          <div class="filter__heading">
-            <h3 class="filter__title">Price</h3>
-            <img class="filter__arrow" src="img/icons/chevron.svg" alt="chevron-icon">
-          </div>
-        </div>
-        <!-- Filter -->
-        <div class="filter" id="color">
-          <div class="filter__heading">
-            <h3 class="filter__title">Color</h3>
-            <img class="filter__arrow" src="img/icons/chevron.svg" alt="chevron-icon">
-          </div>
-          <div class="filter__body">
-            <div class="filter__box">
-              <div class="filter__box--color" style="background-color: #000;"></div>
+      <div class="products__filters">
+        <div class="product__filters-container">
+          <!-- Filter -->
+          <div class="filter display" id="category">
+            <div class="filter__heading">
+              <h3 class="filter__title">Collection</h3>
+              <img class="filter__arrow" src="img/icons/chevron.svg" alt="chevron-icon">
             </div>
-            <div class="filter__box">
-              <div class="filter__box--color" style="background-color: #6F3E18;"></div>
-            </div>
-            <div class="filter__box">
-              <div class="filter__box--color" style="background-color: #D4BE8D;"></div>
-            </div>
-            <div class="filter__box">
-              <div class="filter__box--color" style="background-color: #838383;"></div>
-            </div>
-            <div class="filter__box">
-              <div class="filter__box--color" style="background-color: #FFF;"></div>
-            </div>
-            <div class="filter__box">
-              <div class="filter__box--color" style="background-color: #0F73AD;"></div>
+            <div class="filter__body">
+              <!-- Men -->
+              <div class="checkbox">
+                <input type="checkbox" name="men" id="men">
+                <label for="men">Men</label>
+              </div>
+              <!-- Women -->
+              <div class="checkbox">
+                <input type="checkbox" name="women" id="women">
+                <label for="women">Women</label>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Filter -->
-        <div class="filter" id="size">
-          <div class="filter__heading">
-            <h3 class="filter__title">Size</h3>
-            <img class="filter__arrow" src="img/icons/chevron.svg" alt="chevron-icon">
+          <!-- Filter -->
+          <div class="filter display" id="color">
+            <div class="filter__heading">
+              <h3 class="filter__title">Color</h3>
+              <img class="filter__arrow" src="img/icons/chevron.svg" alt="chevron-icon">
+            </div>
+            <div class="filter__body">
+              <div class="filter__color" id="black">
+                <div class="filter__color-box" style="background-color: #000;"></div>
+              </div>
+              <div class="filter__color" id="white">
+                <div class="filter__color-box" style="background-color: #fff;"></div>
+              </div>
+              <div class="filter__color" id="red">
+                <div class="filter__color-box" style="background-color: #e53935;"></div>
+              </div>
+              <div class="filter__color" id="blue">
+                <div class="filter__color-box" style="background-color: #3949AB;"></div>
+              </div>
+              <div class="filter__color" id="green">
+                <div class="filter__color-box" style="background-color: #43A047;"></div>
+              </div>
+              <div class="filter__color" id="gray">
+                <div class="filter__color-box" style="background-color: #757575;"></div>
+              </div>
+              <div class="filter__color" id="yellow">
+                <div class="filter__color-box" style="background-color: #F9A825;"></div>
+              </div>
+            </div>
           </div>
-          <!-- <div class="filter__body">
-            <div class="filter__box">XS</div>
-            <div class="filter__box">S</div>
-            <div class="filter__box">M</div>
-            <div class="filter__box">L</div>
-            <div class="filter__box">XL</div>
-            <div class="filter__box">XXL</div>
-          </div> -->
+          <!-- Filter -->
+          <div class="filter display" id="price">
+            <div class="filter__heading">
+              <h3 class="filter__title">Price</h3>
+              <img class="filter__arrow" src="img/icons/chevron.svg" alt="chevron-icon">
+            </div>
+            <div class="filter__body">
+              <!-- Price Slider -->
+              <div class="filter__price-inputs">
+                <div class="price-input">
+                  $
+                  <input type="text" id="inputMin">
+                </div>
+                <div class="price-input">
+                  $
+                  <input type="text" id="inputMax">
+                </div>
+              </div>
+              <div id="priceSlider"></div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Products Main -->

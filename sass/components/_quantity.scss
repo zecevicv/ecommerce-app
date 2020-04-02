@@ -47,17 +47,15 @@
   &__minus,
   &__plus {
     flex-grow: 1;
+    height: 100%;
     font-size: 20px;
     font-weight: 400;
     cursor: pointer;
     color: $black;
     line-height: 1;
-
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -ms-user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
     @media only screen and (max-width: $breakpoint-md) {
       font-size: 12px;

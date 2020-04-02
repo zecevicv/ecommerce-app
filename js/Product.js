@@ -8,12 +8,16 @@ export class Product {
     this.salePrice = product.salePrice;
     this.images = product.images;
     this.label = product.label;
+    this.gender = product.gender;
+    this.color = product.color;
   }
 
   static createProductTemplate(product) {
     const productTemplate = document.createElement('A');
     productTemplate.className = 'product';
     productTemplate.setAttribute('href', `single-product.html?id=${product.id}`);
+    productTemplate.dataset.gender = product.gender;
+    productTemplate.dataset.color = product.color;
     productTemplate.innerHTML = `
       <figure class="product__img">
         <img src="${product.images[0]}" alt="product-img">
@@ -33,6 +37,7 @@ export class Product {
 
   static createSingleProductTemplate(product) {
     const singleProductTemplate = document.createElement('DIV');
+    const productColorHex = Product.generateProductColorHex(product.color);
     singleProductTemplate.className = 'single-product';
     singleProductTemplate.innerHTML = `
       <div class="container">
@@ -68,6 +73,13 @@ export class Product {
                 <span class="old-price">$${product.price}</span>
               </p>`
               }
+            </div>
+            <!-- Color -->
+            <div class="single-product__color">
+              <p>Color:</p>
+              <div class="single-product__color-box">
+                <span class="single-product__color-hex" style="background-color: ${productColorHex}"></span>
+              </div>
             </div>
             <!-- Add To Cart -->
             <div class="single-product__add-to-cart">
@@ -113,5 +125,23 @@ export class Product {
     });
 
     return singleProductTemplate;
+  }
+
+  static generateProductColorHex(color) {
+    if (color === 'black') {
+      return '#000';
+    } else if (color === 'white') {
+      return '#fff';
+    } else if (color === 'red') {
+      return '#e53935';
+    } else if (color === 'blue') {
+      return '#3949AB';
+    } else if (color === 'green') {
+      return '#43A047';
+    } else if (color === 'gray') {
+      return '#757575';
+    } else if (color === 'yellow') {
+      return '#F9A825';
+    }
   }
 }
