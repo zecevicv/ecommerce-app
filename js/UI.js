@@ -300,6 +300,14 @@ export class UI {
     this.updateShoppingCartNumber();
   }
 
+  static outputCheckoutProducts() {
+    const checkout = document.querySelector('.checkout');
+
+    if (checkout) {
+      
+    }
+  }
+
   initializeChoseUsSlider() {
     const choseUsSliderEl = document.querySelector('#choseUsSlider');
 

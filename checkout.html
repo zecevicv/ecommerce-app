@@ -8,7 +8,7 @@
   most importantly, for the fashionable.">
   <meta name="keywords" content="T-Shirts, Clothing">
   <meta name="author" content="Vladimir Zecevic">
-  <title>T-Shop | Shopping Cart</title>
+  <title>T-Shop | Checkout</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
   <!-- Favicon -->
@@ -42,38 +42,60 @@
   </header>
 
   <!-- Cart -->
-  <div class="cart">
+  <div class="checkout">
     <div class="container">
       <!-- Heading -->
-      <div class="cart__heading">
-        <h2>Shopping Cart</h2>
-        <img src="img/icons/checkout-icons-1.svg" alt="checkout-icons" class="checkout__icons">
+      <div class="checkout__heading">
+        <h2>Checkout</h2>
+        <img src="img/icons/checkout-icons-2.svg" alt="checkout-icons" class="checkout__icons">
       </div>
-      <!-- Cart No Products -->
-      <p class="cart__no-products" id="cartNoProducts">No products in the cart</p>
-      <!-- Prodcuts Table -->
-      <table class="cart__table" id="cartTable">
-        <thead>
-          <tr class="card__table-heading">
-            <th>Product</th>
-            <th>&nbsp;</th>
-            <th>Ammount</th>
-            <th>Price</th>
-            <th>&nbsp;</th>
-          </tr>
-        </thead>
-        <tbody id="cartOutput">
-        </tbody>
-      </table>
-      <!-- Cart Footer -->
-      <div class="cart__footer">
-        <a href="products.html" class="cart__continue">
-          <img src="img/icons/arrow-black.svg" alt="black-arrow"> Continue Shopping
-        </a>
-        <div class="cart__cost">
-          Total Cost: <span class="price">$0</span>
+      <!-- Body -->
+      <div class="checkout__body">
+        <!-- Shipping Information -->
+        <div class="checkout__shipping">
+          <h3>Shipping Information</h3>
+          <div class="checkout__inputs">
+            <input type="text" class="input input--bordered" placeholder="First Name">
+            <input type="text" class="input input--bordered" placeholder="Last Name">
+            <input type="text" class="input input--bordered" placeholder="Email">
+            <input type="text" class="input input--bordered" placeholder="Phone Number">
+            <input type="text" class="input input--bordered" placeholder="Address">
+            <input type="text" class="input input--bordered" placeholder="City">
+            <input type="text" class="input input--bordered" placeholder="Postal Code / ZIP">
+            <input type="text" class="input input--bordered" placeholder="Country">
+          </div>
         </div>
-        <a href="checkout.html" class="btn btn--orange">Checkout</a>
+        <!-- Your Cart -->
+        <div class="checkout__cart">
+          <h3>Your Cart</h3>
+          <!-- Products -->
+          <div class="checkout__products">
+            <!-- Product -->
+            <div class="checkout__product">
+              <img src="img/products/product-1_01.jpg" alt="product-img">
+              <h4>'Create Don't Hate' T-Shirt</h4>
+              <div class="checkout__product-price">$24.99</div>
+            </div>
+            <!-- Product -->
+            <div class="checkout__product">
+              <img src="img/products/product-1_01.jpg" alt="product-img">
+              <h4>'Create Don't Hate' T-Shirt</h4>
+              <div class="checkout__product-price">$24.99</div>
+            </div>
+          </div>
+          <!-- Total Price -->
+          <div class="checkout__total-price">
+            <p>Total Cost:</p>
+            <div class="price">$4229.98</div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="checkout__footer">
+        <a href="cart.html" class="checkout__continue">
+          <img src="img/icons/arrow-black.svg" alt="black-arrow"> Return to Cart
+        </a>
+        <a href="thank-you.html" class="btn btn--orange ml-auto">Order Products</a>
       </div>
     </div>
   </div>

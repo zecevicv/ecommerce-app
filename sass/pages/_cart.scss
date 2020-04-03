@@ -8,17 +8,31 @@
   }
 
   &__heading {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 65px;
-
-    @media only screen and (max-width: $breakpoint-md) {
-      font-size: 16px;
-      margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 55px;
+  
+      @media only screen and (max-width: $breakpoint-md) {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+  
+      @media only screen and (max-width: $breakpoint-sm) {
+        margin-bottom: 30px;
+      }
     }
 
-    @media only screen and (max-width: $breakpoint-sm) {
-      margin-bottom: 30px;
+    .checkout__icons {
+      max-width: 170px;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        max-width: 130px;
+      }
     }
   }
 

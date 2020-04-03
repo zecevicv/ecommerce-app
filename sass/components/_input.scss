@@ -1,7 +1,7 @@
 .input {
   font-size: 13px;
   font-weight: 400;
-  border: none;
+  border: 1px solid transparent;
   box-shadow: none;
   line-height: 1.5;
   padding: 15px 25px;
@@ -27,5 +27,18 @@
   @media only screen and (max-width: $breakpoint-md) {
     padding: 8px 15px;
     font-size: 10px;
+  }
+
+  &--bordered {
+    border: 1px solid $light-gray;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    }
+
+    &:focus {
+      border: 1px solid $orange;
+    }
   }
 }
