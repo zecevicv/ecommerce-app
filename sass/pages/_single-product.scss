@@ -2,7 +2,7 @@
   padding: 40px 0 55px 0;
 
   @media only screen and (max-width: $breakpoint-sm) {
-    padding: 30px 0 40px 0;
+    padding: 15px 0 40px 0;
   }
 
   .container {
@@ -16,8 +16,11 @@
 
 .single-product__image {
   flex: 0 0 50%;
+  max-width: 50%;
   padding-right: 55px;
   display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
 
   @media only screen and (max-width: $breakpoint-xl) {
     padding-right: 25px;
@@ -30,30 +33,86 @@
   @media only screen and (max-width: $breakpoint-md) {
     padding-right: 0;
     padding-bottom: 40px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    flex-direction: row;
   }
 
   @media only screen and (max-width: $breakpoint-sm) {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
 
-  .product-image__side {
+  .swiper-container {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: contain;
+    background-position: center;
+  }
+
+  .gallery-top {
+    height: 100%;
+    width: 100%;
+    flex: 0 0 80%;
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      flex: 0 0 100%;
+    }
+  }
+
+  .gallery-thumbs {
     flex: 0 0 20%;
+    height: 375px;
+    box-sizing: border-box;
     padding-right: 25px;
 
+    @media only screen and (max-width: $breakpoint-xl) {
+      height: 273px;
+    }
+
     @media only screen and (max-width: $breakpoint-lg) {
+      height: 225px;
       padding-right: 15px;
     }
-    
-    img {
-      margin-bottom: 10px;
-      cursor: pointer;
-      position: relative;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      height: 330px;
+      padding-left: 25px;
+      padding-right: 0;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      display: none;
     }
   }
-  
-  .product-image__main {
-    flex: 0 0 80%;
+
+  .gallery-thumbs .swiper-slide {
+    width: 100%;
+    height: auto;
+    opacity: 0.4;
+    cursor: pointer;
   }
+
+  .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .swiper-scrollbar {
+    display: none;
+
+    @media only screen and (max-width: 575.98px) {
+      display: block;
+    }
+    
+    .swiper-scrollbar-drag {
+      background: rgba($orange, .75);
+    }
+  }
+
 }
 
 .single-product__info {
@@ -74,19 +133,8 @@
     padding-left: 0;
   }
 
-  &-left {
-    flex: 0;
-  }
-
-  &-right {
-    flex: 0;
-    flex-grow: 1;
-    display: flex;
-    padding-top: 30px;
-  }
-
   .single-product__sale {
-    margin-bottom: 25px;
+    margin-bottom: 16px;
 
     @media only screen and (max-width: $breakpoint-xl) {
       margin-bottom: 20px;
@@ -96,6 +144,10 @@
   .single-product__main-info {
     margin-bottom: 40px;
 
+    @media only screen and (max-width: $breakpoint-xl) {
+      margin-bottom: 30px;
+    }
+
     @media only screen and (max-width: $breakpoint-sm) {
       margin-bottom: 20px;
     }
@@ -103,27 +155,27 @@
     .single-product__title {
       font-size: 30px;
       font-weight: 300;
-      margin-bottom: 15px;
+      margin-bottom: 3px;
 
       @media only screen and (max-width: $breakpoint-lg) {
         font-size: 22px;
         margin-bottom: 10px;
       }
     }
-  
+
     .single-product__price {
       font-size: 30px;
 
       @media only screen and (max-width: $breakpoint-lg) {
         font-size: 24px;
       }
-  
+
       .new-price {
         display: inline-block;
         color: $orange;
         margin-right: 40px;
       }
-  
+
       .old-price {
         display: inline-block;
         color: $light-gray;
@@ -135,24 +187,50 @@
   .single-product__color {
     margin-bottom: 40px;
 
+    @media only screen and (max-width: $breakpoint-xl) {
+      margin-bottom: 30px;
+    }
+
     &-box {
       padding: 8px;
       border: 1px solid $light-gray;
       display: inline-flex;
       justify-content: center;
       align-items: center;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        padding: 6px;
+      }
+
+      @media only screen and (max-width: $breakpoint-md) {
+        padding: 5px;
+      }
     }
-    
+
     &-hex {
       width: 25px;
       height: 25px;
       border: 1px solid $offwhite;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        width: 22px;
+        height: 22px;
+      }
+
+      @media only screen and (max-width: $breakpoint-md) {
+        width: 18px;
+        height: 18px;
+      }
     }
 
     p {
       font-size: 13px;
       font-weight: 300;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -161,6 +239,10 @@
       font-size: 13px;
       font-weight: 300;
       margin-bottom: 25px;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        margin-bottom: 15px;
+      }
     }
 
     @media only screen and (max-width: $breakpoint-sm) {
@@ -168,12 +250,6 @@
         width: 90px;
       }
     }
-  }
-
-  .single-product__id {
-    font-size: 12px;
-    color: $black;
-    font-weight: 300;
   }
 
   .single-product__brand {
@@ -198,7 +274,7 @@
     display: inline-block;
     margin: 0 auto;
     border: 1px solid $orange;
-    
+
     &:hover {
       cursor: normal;
     }

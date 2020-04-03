@@ -94,8 +94,8 @@ export class UI {
 
   static outputProducts() {
     const products = JSON.parse(localStorage.getItem('products'));
-    UI.outputProductList(0);
     UI.outputProductSliders();
+    UI.outputProductList(0);
     UI.outputSingleProduct(products);
     UI.outputCartProducts();
   }
@@ -233,6 +233,7 @@ export class UI {
 
     // If we are on the single-product.html page
     if (singleProduct) {
+
       // Get the id from query parameter
       const singleProductId = parseInt(window.location.search.replace('?id=', ''));
       // Filter products array and find the one that matches
@@ -244,6 +245,7 @@ export class UI {
         const singleProductTemplate = Product.createSingleProductTemplate(product);
         singleProduct.appendChild(singleProductTemplate);
         UI.quantityHandler();
+        UI.singleProductImageSlider();
       } else {
         throw Error('Product not found!');
       }
@@ -419,7 +421,7 @@ export class UI {
       priceSlider.noUiSlider.set([null, inputMax.value]);
     });
   }
-  
+
   filtersHandler() {
     const filters = document.querySelectorAll('.filter');
     const productFilters = document.querySelectorAll('.products__filters');
@@ -431,7 +433,7 @@ export class UI {
         const filter = e.currentTarget;
         const filterHeading = filter.querySelector('.filter__heading');
         const filterBody = filter.querySelector('.filter__body');
-        
+
         // Toggle the filter body
         if (e.target.closest('.filter__heading') && viewportWidth > 991) {
           filter.classList.toggle('display');
@@ -453,5 +455,42 @@ export class UI {
         });
       });
     }
+  }
+
+  static singleProductImageSlider() {
+    let galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      direction: 'vertical',
+      noSwiping: true,
+      allowSlidePrev: false,
+      allowSlideNext: false
+    });
+
+    let galleryTop = new Swiper('.gallery-top', {
+      fade: true,
+      effect: 'fade',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        hide: false,
+      },
+      breakpoints: {
+        0: {
+          loop: false
+        },
+        575: {
+          loop: true
+        },
+      },
+    });
   }
 }

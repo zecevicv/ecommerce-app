@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "'Create Don't Hate' Slim Fit T-Shirt",
+      "name": "'Create Don't Hate' T-Shirt",
       "id": 274901,
       "price": 24.99,
       "salePrice": 0,
@@ -15,7 +15,7 @@
       "color": "black"
     }, 
     {
-      "name": "'Laika' Slim Fit T-Shirt",
+      "name": "'Laika' T-Shirt",
       "id": 921084,
       "price": 24.99,
       "salePrice": 0,
@@ -29,7 +29,7 @@
       "color": "white"
     }, 
     {
-      "name": "'The Great Ramen' Slim Fit T-Shirt",
+      "name": "'The Great Ramen' T-Shirt",
       "id": 131191,
       "price": 24.99,
       "salePrice": 17.99,
@@ -42,7 +42,7 @@
       "color": "red"
     }, 
     {
-      "name": "'Bodacious Period' Slim Fit T-Shirt",
+      "name": "'Bodacious Period' T-Shirt",
       "id": 436781,
       "price": 24.99,
       "salePrice": 17.99,
@@ -55,7 +55,7 @@
       "color": "blue"
     }, 
     {
-      "name": "'Sea Emperor' Slim Fit T-Shirt",
+      "name": "'Sea Emperor' T-Shirt",
       "id": 119863,
       "price": 24.99,
       "salePrice": 0,
@@ -69,7 +69,7 @@
       "color": "gray"
     }, 
     {
-      "name": "'MTN LP' Slim Fit T-Shirt",
+      "name": "'MTN LP' T-Shirt",
       "id": 303487,
       "price": 24.99,
       "salePrice": 0,
@@ -83,7 +83,7 @@
       "color": "yellow"
     }, 
     {
-      "name": "'I'm Dogtor' Slim Fit T-Shirt",
+      "name": "'I'm Dogtor' T-Shirt",
       "id": 930265,
       "price": 24.99,
       "salePrice": 0,
@@ -97,7 +97,7 @@
       "color": "green"
     }, 
     {
-      "name": "'Fuji Classic' Slim Fit T-Shirt",
+      "name": "'Fuji Classic' T-Shirt",
       "id": 487632,
       "price": 24.99,
       "salePrice": 0,
@@ -111,7 +111,7 @@
       "color": "green"
     }, 
     {
-      "name": "'Gulf Racing Retro' Slim Fit T-Shirt",
+      "name": "'Gulf Racing Retro' T-Shirt",
       "id": 156557,
       "price": 24.99,
       "salePrice": 17.99,
@@ -124,7 +124,7 @@
       "color": "blue"
     }, 
     {
-      "name": "'Panda Boxer' Slim Fit T-Shirt",
+      "name": "'Panda Boxer' T-Shirt",
       "id": 233244,
       "price": 24.99,
       "salePrice": 0,
@@ -138,7 +138,7 @@
       "color": "white"
     }, 
     {
-      "name": "'CHAOS' Slim Fit T-Shirt",
+      "name": "'CHAOS' T-Shirt",
       "id": 573377,
       "price": 24.99,
       "salePrice": 0,
@@ -152,7 +152,7 @@
       "color": "gray"
     }, 
     {
-      "name": "'Magna' Slim Fit T-Shirt",
+      "name": "'Magna' T-Shirt",
       "id": 173358,
       "price": 24.99,
       "salePrice": 17.99,
@@ -165,7 +165,7 @@
       "color": "black"
     }, 
     {
-      "name": "'Music Man' Slim Fit T-Shirt",
+      "name": "'Music Man' T-Shirt",
       "id": 248113,
       "price": 24.99,
       "salePrice": 0,
@@ -178,7 +178,7 @@
       "color": "white"
     }, 
     {
-      "name": "'BOWL' Slim Fit T-Shirt",
+      "name": "'BOWL' T-Shirt",
       "id": 331272,
       "price": 24.99,
       "salePrice": 17.99,
@@ -191,7 +191,7 @@
       "color": "red"
     }, 
     {
-      "name": "'Squish That Cat' Slim Fit T-Shirt",
+      "name": "'Squish That Cat' T-Shirt",
       "id": 114477,
       "price": 24.99,
       "salePrice": 0,

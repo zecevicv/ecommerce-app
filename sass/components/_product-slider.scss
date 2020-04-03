@@ -103,4 +103,9 @@
       position: relative;
     }
   }
+
+  .swiper-button-disabled {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
