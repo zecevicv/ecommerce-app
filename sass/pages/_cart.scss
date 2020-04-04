@@ -200,22 +200,44 @@
     }
   }
 
-  &__notification {
-    background-color: $white;
-    font-size: 14px;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    padding: 20px 30px;
+  &__notification-overlay {
+    opacity: 0;
+    visibility: hidden;
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 100%);
-    transition: transform 0.3s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 99;
+    transition: all 0.3s ease;
 
-    @media only screen and (max-width: $breakpoint-md) {
-      padding: 15px 20px;
+    &.display {
+      opacity: 1;
+      visibility: visible;
+
+      .cart__notification {
+        transform: translate(-50%, 0);
+      }
     }
-    
+
+    .cart__notification {
+      background-color: $white;
+      font-size: 14px;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      padding: 20px 30px;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      transition: transform 0.3s ease-in-out;
+  
+      @media only screen and (max-width: $breakpoint-md) {
+        padding: 15px 20px;
+      }
+    }
+
     p {
       max-width: 100%;
       font-size: 14px;
@@ -224,10 +246,6 @@
       @media only screen and (max-width: $breakpoint-sm) {
         font-size: 12px;
       }
-    }
-
-    &.display {
-      transform: translate(-50%, 0);
     }
   }
 

@@ -86,10 +86,12 @@
   }
 
   &__cart {
-    flex: 0 0 24%;
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
 
     @media only screen and (max-width: $breakpoint-xl) {
-      flex: 0 0 28%;
+      flex: 0 0 35%;
       margin-bottom: 25px;
     }
 
@@ -103,10 +105,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 15px 0;
-
-    @media only screen and (max-width: $breakpoint-md) {
-      justify-content: flex-start;
+    
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
     }
 
     img {
@@ -116,15 +117,24 @@
       object-position: top;
       overflow: hidden;
       border-radius: 50%;
-      margin-right: 15px;
+      margin-right: 25px;
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        margin-right: 15px;
+      }
 
       @media only screen and (max-width: $breakpoint-lg) {
         height: 30px;
         width: 30px;
+        margin-right: 10px;
       }
 
       @media only screen and (max-width: $breakpoint-md) {
         margin-right: 25px;
+      }
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        margin-right: 10px;
       }
     }
 
@@ -135,6 +145,7 @@
 
       @media only screen and (max-width: $breakpoint-lg) {
         font-size: 12px;
+        max-width: 120px;
       }
 
       @media only screen and (max-width: $breakpoint-md) {
@@ -142,49 +153,77 @@
       }
     }
 
-    &-price {
+    &-quantity {
       font-size: 14px;
       font-weight: 600;
-      margin-left: 15px;
+      margin-left: auto;
 
       @media only screen and (max-width: $breakpoint-lg) {
         font-size: 12px;
       }
-      
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        margin-right: auto;
+      }
+    }
+
+    &-price {
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: 45px;
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        margin-left: 25px;
+      }
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        font-size: 12px;
+        margin-left: 10px;
+      }
+
       @media only screen and (max-width: $breakpoint-md) {
-        margin-left: auto;
+        margin-left: 100px;
+      }
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        margin-left: 0;
       }
     }
   }
 
   &__total-price {
-    margin-left: 15px;
-    margin-right: 15px;
     margin-top: 35px;
-    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
     text-align: center;
     background-color: #f1f1f1;
     padding: 13px 30px;
     font-size: 16px;
     border-radius: 100px;
     font-weight: 300;
+    width: 250px;
+    
+    @media only screen and (max-width: $breakpoint-xl) {
+      font-size: 14px;
+      width: 200px;
+      padding: 13px 15px;
+    }
 
     @media only screen and (max-width: $breakpoint-lg) {
       font-size: 12px;
-      padding: 10px 15px;
-      margin-left: 0;
-      margin-right: 0;
+      width: 180px;
       margin-top: 25px;
     }
 
     @media only screen and (max-width: $breakpoint-md) {
-      display: inline-flex;
-      width: 160px;
       margin-left: auto;
+      margin-right: 0;
+      padding: 7px 15px;
     }
 
     @media only screen and (max-width: $breakpoint-sm) {
-      margin-top: 10px;
+      margin-top: 30px;
     }
 
     p {
