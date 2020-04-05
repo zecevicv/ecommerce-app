@@ -63,16 +63,46 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
-    row-gap: 20px;
+    // row-gap: 20px;
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+
+      &.invalid {
+        input {
+          border: 1px solid #e53935;
+        }
+
+        .checkout__input-message {
+          opacity: 1;
+        }
+      }
+    }
+
+    .checkout__input-message {
+      font-size: 10px;
+      color: #e53935;
+      line-height: 1;
+      padding: 5px 0 5px 25px;
+      opacity: 0;
+      transition: $transition-slow;
+
+      @media only screen and (max-width: $breakpoint-xl) {
+        padding: 5px 0 5px 17px;
+      }
+
+      @media only screen and (max-width: $breakpoint-md) {
+        padding: 5px 0 5px 15px;
+      }
+    }
 
     @media only screen and (max-width: $breakpoint-lg) {
       column-gap: 15px;
-      row-gap: 15px;
     }
 
     @media only screen and (max-width: $breakpoint-sm) {
       column-gap: 10px;
-      row-gap: 10px;
     }
 
     @media only screen and (max-width: 400px) {
@@ -82,6 +112,7 @@
     input {
       min-width: 0;
       max-width: 100%;
+      width: 100%;
     }
   }
 

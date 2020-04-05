@@ -33,6 +33,13 @@
     border-radius: 50%;
     padding: 16px;
   }
+
+  &.disabled {
+    background-color: $offwhite;
+    color: $gray;
+    cursor: default;
+    pointer-events: none;
+  }
   
   &:focus {
     outline: none;

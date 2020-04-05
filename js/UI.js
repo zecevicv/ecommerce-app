@@ -1,9 +1,5 @@
-import {
-  Product
-} from "./Product.js";
-import {
-  ShoppingCart
-} from "./ShoppingCart.js";
+import { Product } from "./Product.js";
+import { ShoppingCart } from "./ShoppingCart.js";
 
 export class UI {
   constructor() {
@@ -98,6 +94,7 @@ export class UI {
     UI.outputProductList(0);
     UI.outputSingleProduct(products);
     UI.outputCartProducts();
+    UI.outputCheckoutProducts();
   }
 
   static outputProductList(currentPage) {
@@ -262,6 +259,7 @@ export class UI {
       const shoppingCartProducts = JSON.parse(localStorage.getItem('shoppingCart'));
       const shoppingCartNoProduct = document.querySelector('#cartNoProducts');
       const shoppingCartTable = document.querySelector('#cartTable');
+      const checkoutBtn = document.querySelector('#checkoutBtn');
 
       const outputCartProduct = (item, quantity) => {
         const cartProductTemplate = ShoppingCart.createCartProductTemplate(item, parseInt(quantity));
@@ -283,6 +281,7 @@ export class UI {
             }
           })
         });
+        checkoutBtn.classList.remove('disabled');
       } else {
         if (!shoppingCartNoProduct.classList.contains('display')) {
           shoppingCartNoProduct.classList.add('display');
@@ -290,6 +289,7 @@ export class UI {
         if (shoppingCartTable.classList.contains('display')) {
           shoppingCartTable.classList.remove('display');
         }
+        checkoutBtn.classList.add('disabled');
       }
 
       // Connect quantityHandler
@@ -302,10 +302,38 @@ export class UI {
 
   static outputCheckoutProducts() {
     const checkout = document.querySelector('.checkout');
-
+    
     if (checkout) {
-      
+      const products = JSON.parse(localStorage.getItem('products'));
+      const shoppingCartProducts = JSON.parse(localStorage.getItem('shoppingCart'));
+      const checkoutOutput = document.querySelector('#checkoutOutput');
+      const totalPrice = document.querySelector('#totalPrice');
+
+      if (shoppingCartProducts && shoppingCartProducts.length > 0) {
+        let sum = 0;
+        shoppingCartProducts.forEach((cartProduct) => {
+          products.forEach((product) => {
+            if (product.id === cartProduct.productId) {
+              const productEL = document.createElement('DIV');
+              productEL.className = 'checkout__product';
+              productEL.innerHTML = `
+                <img src="${product.images[0]}" alt="product-img">
+                <h4>${product.name}</h4>
+                <div class="checkout__product-quantity">x${cartProduct.quantity}</div>
+                <div class="checkout__product-price">$${(cartProduct.price * cartProduct.quantity).toFixed(2)}</div>`;
+              checkoutOutput.appendChild(productEL);
+              sum = sum + (cartProduct.price * cartProduct.quantity);
+            }
+          })
+        });
+        totalPrice.innerHTML = `$${sum}`;
+      }
     }
+  }
+
+  static disableCheckoutBtn() {
+    const checkoutBtn = document.querySelector('#checkoutBtn');
+    checkoutBtn.classList.add('disabled');
   }
 
   initializeChoseUsSlider() {

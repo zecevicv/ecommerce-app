@@ -54,41 +54,51 @@
         <!-- Shipping Information -->
         <div class="checkout__shipping">
           <h3>Shipping Information</h3>
-          <div class="checkout__inputs">
-            <input type="text" class="input input--bordered" placeholder="First Name">
-            <input type="text" class="input input--bordered" placeholder="Last Name">
-            <input type="text" class="input input--bordered" placeholder="Email">
-            <input type="text" class="input input--bordered" placeholder="Phone Number">
-            <input type="text" class="input input--bordered" placeholder="Address">
-            <input type="text" class="input input--bordered" placeholder="City">
-            <input type="text" class="input input--bordered" placeholder="Postal Code / ZIP">
-            <input type="text" class="input input--bordered" placeholder="Country">
-          </div>
+          <form class="checkout__inputs" id="checkoutForm">
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="First Name" id="firstName">
+              <span class="checkout__input-message">Not valid first name</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="Last Name" id="lastName">
+              <span class="checkout__input-message">Not valid last name</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="Email" id="email">
+              <span class="checkout__input-message">Not valid email</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="Phone Number" id="phone">
+              <span class="checkout__input-message">Not a valid phone number</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="Address" id="address">
+              <span class="checkout__input-message">Not a valid address</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="City" id="city">
+              <span class="checkout__input-message">Not a valid city</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="Postal Code / ZIP" id="zipCode">
+              <span class="checkout__input-message">Not a valid zip code</span>
+            </div>
+            <div class="input-group">
+              <input type="text" class="input input--bordered" placeholder="Country" id="country">
+              <span class="checkout__input-message">Not a valid country</span>
+            </div>
+          </form>
         </div>
         <!-- Your Cart -->
         <div class="checkout__cart">
           <h3>Your Cart</h3>
           <!-- Products -->
-          <div class="checkout__products">
-            <!-- Product -->
-            <div class="checkout__product">
-              <img src="img/products/product-1_01.jpg" alt="product-img">
-              <h4>'Create Don't Hate' T-Shirt</h4>
-              <div class="checkout__product-quantity">x10</div>
-              <div class="checkout__product-price">$24.99</div>
-            </div>
-            <!-- Product -->
-            <div class="checkout__product">
-              <img src="img/products/product-1_01.jpg" alt="product-img">
-              <h4>'Create Don't Hate' T-Shirt</h4>
-              <div class="checkout__product-quantity">x10</div>
-              <div class="checkout__product-price">$24.99</div>
-            </div>
+          <div class="checkout__products" id="checkoutOutput">
           </div>
           <!-- Total Price -->
           <div class="checkout__total-price">
             <p>Total Cost:</p>
-            <div class="price">$4229.98</div>
+            <div class="price" id="totalPrice">$4229.98</div>
           </div>
         </div>
       </div>
@@ -97,7 +107,7 @@
         <a href="cart.html" class="checkout__continue">
           <img src="img/icons/arrow-black.svg" alt="black-arrow"> Return to Cart
         </a>
-        <a href="thank-you.html" class="btn btn--orange ml-auto">Order Products</a>
+        <a href="thank-you.html" class="btn btn--orange ml-auto" id="orderProductsBtn">Order Products</a>
       </div>
     </div>
   </div>

@@ -53,6 +53,7 @@ export class ShoppingCart {
 
     if (products.length === 0) {
       UI.showCartNoProducts();
+      UI.disableCheckoutBtn();
     }
 
     // Update shopping cart number indicator
