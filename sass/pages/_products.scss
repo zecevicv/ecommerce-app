@@ -6,11 +6,11 @@
 
   @media only screen and (max-width: $breakpoint-lg) {
     flex-direction: column;
-    padding: 40px 15px 60px 15px;
+    padding: 40px 15px 80px 15px;
   }
 
   @media only screen and (max-width: $breakpoint-sm) {
-    padding: 30px 15px 30px 15px;
+    padding: 30px 15px 60px 15px;
   }
 }
 
@@ -19,6 +19,12 @@
   flex: 0 0 20%;
 
   .product__filters-container {
+    background-color: $white;
+    
+    @media only screen and (max-width: $breakpoint-lg) {
+      box-shadow: 0 330px 0 rgba(255, 255, 255, 1), 0 500px 0 rgba(255, 255, 255, 1);
+    }
+    
     @media only screen and (max-width: $breakpoint-sm) {
       max-height: calc(100vh - 160px);
       overflow: scroll;
@@ -106,6 +112,25 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 40px;
   row-gap: 50px;
+  min-height: 350px;
+  
+  @media only screen and (max-width: $breakpoint-lg) {
+    min-height: 200px;
+  }
+  
+  @media only screen and (max-width: $breakpoint-sm) {
+    min-height: 70px;
+  }
+
+  & > p {
+    font-size: 14px;
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    
+    @media only screen and (max-width: $breakpoint-lg) {
+      margin-top: 30px;
+    }
+  }
 
   @media only screen and (max-width: $breakpoint-xl) {
     column-gap: 20px;

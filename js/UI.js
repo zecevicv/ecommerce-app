@@ -3,11 +3,19 @@ import { ShoppingCart } from "./ShoppingCart.js";
 
 export class UI {
   constructor() {
-    this.currentPage = 0;
+    this.activeFilters = {
+      filters: {
+        colors: [],
+        collections: []
+      },
+      price: {
+        minPrice: 0,
+        maxPrice: 50
+      }
+    };
 
     this.animateHeader();
     this.initializeChoseUsSlider();
-    this.paginationHandler();
 
     if (document.querySelector('.products')) {
       this.initializePriceSlider();
@@ -91,26 +99,57 @@ export class UI {
   static outputProducts() {
     const products = JSON.parse(localStorage.getItem('products'));
     UI.outputProductSliders();
-    UI.outputProductList(0);
+    UI.outputProductList({filters: {colors: [], collections: []}, price: {minPrice: 0, maxPrice: 50}});
     UI.outputSingleProduct(products);
     UI.outputCartProducts();
     UI.outputCheckoutProducts();
   }
 
-  static outputProductList(currentPage) {
+  static outputProductList(filtersArray) {
     const productList = document.querySelector('.products__list');
-
+    
     if (productList) {
-      productList.innerHTML = '';
       const products = JSON.parse(localStorage.getItem('products'));
-      const productsPerPage = 9;
+      let productsToOutput = products;
+      
+      productList.innerHTML = '';
 
-      for (let i = currentPage * productsPerPage; i < productsPerPage * (currentPage + 1); i++) {
-        if (products[i]) {
-          const productTemplate = Product.createProductTemplate(products[i]);
-          productList.appendChild(productTemplate);
-        }
+      // Price filter
+      if (filtersArray.price.minPrice > 0 || filtersArray.price.maxPrice < 50) {
+        productsToOutput = productsToOutput.filter((product) => {
+          return ((parseInt(product.salePrice) === 0 ? parseInt(product.price) : parseInt(product.salePrice)) > parseInt(filtersArray.price.minPrice)) && ((parseInt(product.salePrice) === 0 ? parseInt(product.price) : parseInt(product.salePrice)) < parseInt(filtersArray.price.maxPrice));
+        })
       }
+
+      // Color filter
+      if (filtersArray.filters.colors.length > 0) {
+        productsToOutput = productsToOutput.filter((product) => {
+          return (filtersArray.filters.colors.includes(product.color));
+        });
+      }
+
+      // Collections filter
+      if (filtersArray.filters.collections.length > 0) {
+        productsToOutput = productsToOutput.filter((product) => {
+          return (filtersArray.filters.collections.includes(product.gender));
+        });
+      }
+
+      // Output all products
+      if (productsToOutput.length > 0) {
+        for (let i = 0; i < productsToOutput.length; i++) {
+          if (productsToOutput[i]) {
+            const productTemplate = Product.createProductTemplate(productsToOutput[i]);
+            productList.appendChild(productTemplate);
+          }
+        }
+      } else {
+        const text = document.createElement('P');
+        text.innerHTML = 'No products match your search criteria';
+        productList.appendChild(text);
+      }
+
+      document.querySelector('.products__heading .number').innerHTML = `(${productsToOutput.length})`;
     }
   }
 
@@ -374,29 +413,6 @@ export class UI {
     }
   }
 
-  paginationHandler() {
-    const pagination = document.querySelector('.pagination');
-
-    if (pagination) {
-      pagination.addEventListener('click', (e) => {
-        const buttons = pagination.querySelectorAll('button');
-        let currentPage = parseInt(e.target.innerHTML) - 1;
-
-        if (e.target.closest('.page')) {
-          currentPage = parseInt(e.target.innerHTML) - 1;
-          this.scrollToTop();
-          buttons.forEach((button) => {
-            button.classList.remove('active');
-          });
-          e.target.classList.add('active');
-          setTimeout(() => {
-            UI.outputProductList(currentPage);
-          }, 800);
-        }
-      });
-    }
-  }
-
   scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -444,18 +460,45 @@ export class UI {
 
       if (handle) {
         inputMax.value = value;
+        this.activeFilters.price.maxPrice = inputMax.value;
+        this.addToFiltersArray(0, 'price');
       } else {
         inputMin.value = value;
+        this.activeFilters.price.minPrice = inputMin.value;
+        this.addToFiltersArray(0, 'price');
       }
     });
 
     inputMin.addEventListener('change', () => {
       priceSlider.noUiSlider.set([inputMin.value, null]);
+      this.activeFilters.price.minPrice = inputMin.value;
+      this.addToFiltersArray(0, 'price');
     });
 
     inputMax.addEventListener('change', () => {
       priceSlider.noUiSlider.set([null, inputMax.value]);
+      this.activeFilters.price.maxPrice = inputMax.value;
+      this.addToFiltersArray(0, 'price');
     });
+  }
+
+  addToFiltersArray(filter, filterType) {
+    if (filter !== 0) {
+      if (filterType === 'color') {
+        if (!this.activeFilters.filters.colors.includes(filter)) {
+          this.activeFilters.filters.colors.push(filter);
+        } else {
+          this.activeFilters.filters.colors = this.activeFilters.filters.colors.filter((item) => item !== filter);
+        } 
+      } else if (filterType === 'collection') {
+        if (!this.activeFilters.filters.collections.includes(filter)) {
+          this.activeFilters.filters.collections.push(filter);
+        } else {
+          this.activeFilters.filters.collections = this.activeFilters.filters.collections.filter((item) => item !== filter);
+        } 
+      }
+    }
+    UI.outputProductList(this.activeFilters);
   }
 
   filtersHandler() {
@@ -469,6 +512,8 @@ export class UI {
         const filter = e.currentTarget;
         const filterHeading = filter.querySelector('.filter__heading');
         const filterBody = filter.querySelector('.filter__body');
+        const inputMin = document.getElementById('inputMin');
+        const inputMax = document.getElementById('inputMax');
 
         // Toggle the filter body
         if (e.target.closest('.filter__heading') && viewportWidth > 991) {
@@ -479,6 +524,15 @@ export class UI {
         if (e.target.closest('.filter__color')) {
           const filterColor = e.target.closest('.filter__color');
           filterColor.classList.toggle('active');
+          const color = filterColor.id;
+          this.addToFiltersArray(color, 'color');
+        }
+
+        // Filter collection handler
+        if (e.target.closest('.checkbox label')) {
+          const filterCollection = e.target.closest('.checkbox label');
+          const collection = filterCollection.getAttribute('for');
+          this.addToFiltersArray(collection, 'collection');
         }
       });
     });
