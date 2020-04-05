@@ -9,8 +9,6 @@ export class Checkout {
     }
   }
 
-  
-
   checkoutHandler() {
     let isValidForm = false;
     isValidForm = this.validateCheckoutForm();

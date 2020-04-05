@@ -326,7 +326,7 @@ export class UI {
             }
           })
         });
-        totalPrice.innerHTML = `$${sum}`;
+        totalPrice.innerHTML = `$${sum.toFixed(2)}`;
       }
     }
   }
