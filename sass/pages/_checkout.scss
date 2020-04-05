@@ -113,6 +113,10 @@
       min-width: 0;
       max-width: 100%;
       width: 100%;
+
+      @media only screen and (max-width: $breakpoint-md) {
+        padding: 12px 15px;
+      }
     }
   }
 
