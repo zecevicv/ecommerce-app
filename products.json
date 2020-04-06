@@ -3,7 +3,7 @@
     {
       "name": "'Create Don't Hate' T-Shirt",
       "id": 274901,
-      "price": 24.99,
+      "price": 49.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-1_01.jpg",
@@ -17,7 +17,7 @@
     {
       "name": "'Laika' T-Shirt",
       "id": 921084,
-      "price": 24.99,
+      "price": 36.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-2_01.jpg",
@@ -31,7 +31,7 @@
     {
       "name": "'The Great Ramen' T-Shirt",
       "id": 131191,
-      "price": 24.99,
+      "price": 54.99,
       "salePrice": 17.99,
       "images": [
         "../img/products/product-3_01.jpg",
@@ -44,8 +44,8 @@
     {
       "name": "'Bodacious Period' T-Shirt",
       "id": 436781,
-      "price": 24.99,
-      "salePrice": 17.99,
+      "price": 26.99,
+      "salePrice": 11.99,
       "images": [
         "../img/products/product-4_01.jpg",
         "../img/products/product-4_02.jpg",
@@ -57,7 +57,7 @@
     {
       "name": "'Sea Emperor' T-Shirt",
       "id": 119863,
-      "price": 24.99,
+      "price": 21.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-5_01.jpg",
@@ -71,7 +71,7 @@
     {
       "name": "'MTN LP' T-Shirt",
       "id": 303487,
-      "price": 24.99,
+      "price": 46.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-6_01.jpg",
@@ -85,7 +85,7 @@
     {
       "name": "'I'm Dogtor' T-Shirt",
       "id": 930265,
-      "price": 24.99,
+      "price": 12.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-7_01.jpg",
@@ -99,7 +99,7 @@
     {
       "name": "'Fuji Classic' T-Shirt",
       "id": 487632,
-      "price": 24.99,
+      "price": 12.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-8_01.jpg",
@@ -114,7 +114,7 @@
       "name": "'Gulf Racing Retro' T-Shirt",
       "id": 156557,
       "price": 24.99,
-      "salePrice": 17.99,
+      "salePrice": 6.99,
       "images": [
         "../img/products/product-9_01.jpg",
         "../img/products/product-9_02.jpg",
@@ -126,7 +126,7 @@
     {
       "name": "'Panda Boxer' T-Shirt",
       "id": 233244,
-      "price": 24.99,
+      "price": 17.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-10_01.jpg",
@@ -140,7 +140,7 @@
     {
       "name": "'CHAOS' T-Shirt",
       "id": 573377,
-      "price": 24.99,
+      "price": 36.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-11_01.jpg",
@@ -154,8 +154,8 @@
     {
       "name": "'Magna' T-Shirt",
       "id": 173358,
-      "price": 24.99,
-      "salePrice": 17.99,
+      "price": 49.99,
+      "salePrice": 25.99,
       "images": [
         "../img/products/product-12_01.jpg",
         "../img/products/product-12_02.jpg",
@@ -167,7 +167,7 @@
     {
       "name": "'Music Man' T-Shirt",
       "id": 248113,
-      "price": 24.99,
+      "price": 14.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-13_01.jpg",
@@ -180,8 +180,8 @@
     {
       "name": "'BOWL' T-Shirt",
       "id": 331272,
-      "price": 24.99,
-      "salePrice": 17.99,
+      "price": 57.99,
+      "salePrice": 30.99,
       "images": [
         "../img/products/product-14_01.jpg",
         "../img/products/product-14_02.jpg",
@@ -193,7 +193,7 @@
     {
       "name": "'Squish That Cat' T-Shirt",
       "id": 114477,
-      "price": 24.99,
+      "price": 37.99,
       "salePrice": 0,
       "images": [
         "../img/products/product-15_01.jpg",
