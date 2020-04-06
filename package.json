@@ -6,7 +6,7 @@
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w --output-style compressed",
     "compile:sass": "node-sass sass/main.scss css/style.min.css --output-style compressed",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css --output-style compressed",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/style.prod.css --output-style compressed",
     "build": "babel src --watch -d dist"
   },
   "author": "Vladimir Zecevic",

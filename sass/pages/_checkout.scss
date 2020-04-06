@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    h2 {
+    h1 {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 55px;
@@ -63,7 +63,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
-    // row-gap: 20px;
 
     .input-group {
       display: flex;
